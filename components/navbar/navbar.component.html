@@ -1,0 +1,45 @@
+<!-- Navbar Component Template -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Playground</a>
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      (click)="toggleNavbar()"
+      [attr.aria-expanded]="isNavbarCollapsed"
+      aria-controls="navbarNav" 
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" 
+         [class.show]="!isNavbarCollapsed" 
+         id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" 
+             [class.active]="activeSection === 'home'"
+             (click)="setActiveSection('home')"
+             href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             [class.active]="activeSection === 'pillars'"
+             (click)="setActiveSection('pillars')"
+             href="#pillars">OOP Pillars</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             [class.active]="activeSection === 'patterns'"
+             (click)="setActiveSection('patterns')"
+             href="#patterns">Design Patterns</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             [class.active]="activeSection === 'solid'"
+             (click)="setActiveSection('solid')"
+             href="#solid">SOLID</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

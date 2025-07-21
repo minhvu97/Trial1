@@ -1,0 +1,981 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">OOP Showcase</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Debug in Navbar -->
+            <div class="navbar-text text-warning me-3">
+                <small>Debug: {{ activeSection() }}</small>
+            </div>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" [class.active]="activeSection() === 'home'" (click)="onNavClick($event, 'home')" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [class.active]="activeSection() === 'features'" (click)="onNavClick($event, 'features')" href="#features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [class.active]="activeSection() === 'documentation'" (click)="onNavClick($event, 'documentation')" href="#documentation">Documentation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [class.active]="activeSection() === 'about'" (click)="onNavClick($event, 'about')" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [class.active]="activeSection() === 'contact'" (click)="onNavClick($event, 'contact')" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mt-5">
+    
+    <!-- Home Section -->
+    <div id="home" [style.display]="activeSection() === 'home' ? 'block' : 'none'">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center mb-5 title-animate animate-fade-up">Object-Oriented Programming Fundamentals</h1>
+            </div>
+        </div>
+
+        <!-- The Four Pillars of OOP -->
+        <div class="row mb-5">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 animate-slide-left">
+                <div class="card-header bg-primary text-white">
+                    <h4>1. Encapsulation</h4>
+                </div>
+                <div class="card-body">
+                    <p><strong>Definition:</strong> Bundling data and methods that operate on that data within a single unit (class).</p>
+                    <p><strong>Key Benefits:</strong></p>
+                    <ul>
+                        <li>Data hiding and security</li>
+                        <li>Controlled access through methods</li>
+                        <li>Easier maintenance and debugging</li>
+                    </ul>
+                    <pre><code>class BankAccount {{ '{' }}
+    private double balance;
+    
+    public void deposit(double amount) {{ '{' }}
+        if (amount > 0) {{ '{' }}
+            balance += amount;
+        {{ '}' }}
+    {{ '}' }}
+    
+    public double getBalance() {{ '{' }}
+        return balance;
+    {{ '}' }}
+{{ '}' }}</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 animate-slide-right">
+                <div class="card-header bg-success text-white">
+                    <h4>2. Inheritance</h4>
+                </div>
+                <div class="card-body">
+                    <p><strong>Definition:</strong> Creating new classes based on existing classes, inheriting their properties and methods.</p>
+                    <p><strong>Key Benefits:</strong></p>
+                    <ul>
+                        <li>Code reusability</li>
+                        <li>Hierarchical classification</li>
+                        <li>Method overriding</li>
+                    </ul>
+                    <pre><code>class Animal {{ '{' }}
+    protected String name;
+    public void eat() {{ '{' }} /* implementation */ {{ '}' }}
+{{ '}' }}
+
+class Dog extends Animal {{ '{' }}
+    public void bark() {{ '{' }}
+        System.out.println(name + " is barking!");
+    {{ '}' }}
+{{ '}' }}</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 animate-slide-left animate-delay-1">
+                <div class="card-header bg-warning text-white">
+                    <h4>3. Polymorphism</h4>
+                </div>
+                <div class="card-body">
+                    <p><strong>Definition:</strong> The ability of objects to take multiple forms - same interface, different implementations.</p>
+                    <p><strong>Key Benefits:</strong></p>
+                    <ul>
+                        <li>Flexibility in code design</li>
+                        <li>Runtime method resolution</li>
+                        <li>Easier code maintenance</li>
+                    </ul>
+                    <pre><code>abstract class Shape {{ '{' }}
+    abstract double calculateArea();
+{{ '}' }}
+
+class Circle extends Shape {{ '{' }}
+    double calculateArea() {{ '{' }}
+        return Math.PI * radius * radius;
+    {{ '}' }}
+{{ '}' }}
+
+class Rectangle extends Shape {{ '{' }}
+    double calculateArea() {{ '{' }}
+        return width * height;
+    {{ '}' }}
+{{ '}' }}</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 animate-slide-right animate-delay-1">
+                <div class="card-header bg-danger text-white">
+                    <h4>4. Abstraction</h4>
+                </div>
+                <div class="card-body">
+                    <p><strong>Definition:</strong> Hiding complex implementation details while showing only essential features.</p>
+                    <p><strong>Key Benefits:</strong></p>
+                    <ul>
+                        <li>Simplified interface</li>
+                        <li>Reduced complexity</li>
+                        <li>Implementation independence</li>
+                    </ul>
+                    <pre><code>interface Vehicle {{ '{' }}
+    void start();
+    void stop();
+    void accelerate();
+{{ '}' }}
+
+class Car implements Vehicle {{ '{' }}
+    public void start() {{ '{' }}
+        // Complex engine starting logic hidden
+        System.out.println("Car started");
+    {{ '}' }}
+{{ '}' }}</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Design Patterns Section -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2 class="text-center mb-4 animate-fade-up">Key Design Patterns</h2>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card animate-fade-up animate-delay-1">
+                <div class="card-header bg-info text-white">
+                    <h5>Singleton Pattern</h5>
+                </div>
+                <div class="card-body">
+                    <p>Ensures only one instance of a class exists throughout the application.</p>
+                    <small class="text-muted">Used in: Database connections, logging, configuration</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card animate-fade-up animate-delay-2">
+                <div class="card-header bg-info text-white">
+                    <h5>Factory Pattern</h5>
+                </div>
+                <div class="card-body">
+                    <p>Creates objects without specifying their exact class, promoting loose coupling.</p>
+                    <small class="text-muted">Used in: Object creation, dependency injection</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card animate-fade-up animate-delay-3">
+                <div class="card-header bg-info text-white">
+                    <h5>Observer Pattern</h5>
+                </div>
+                <div class="card-body">
+                    <p>Defines a one-to-many dependency between objects for automatic notifications.</p>
+                    <small class="text-muted">Used in: Event handling, MVC architecture</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SOLID Principles -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2 class="text-center mb-4 animate-fade-up">SOLID Principles</h2>
+        </div>
+        <div class="col-12">
+            <div class="card animate-fade-up animate-delay-1">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2 text-center">
+                            <h3 class="text-primary animate-pulse">S</h3>
+                            <strong>Single Responsibility</strong>
+                            <p class="small">A class should have only one reason to change</p>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <h3 class="text-success animate-pulse">O</h3>
+                            <strong>Open/Closed</strong>
+                            <p class="small">Open for extension, closed for modification</p>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <h3 class="text-warning animate-pulse">L</h3>
+                            <strong>Liskov Substitution</strong>
+                            <p class="small">Objects should be replaceable with their subtypes</p>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <h3 class="text-info animate-pulse">I</h3>
+                            <strong>Interface Segregation</strong>
+                            <p class="small">Many specific interfaces are better than one general</p>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <h3 class="text-danger animate-pulse">D</h3>
+                            <strong>Dependency Inversion</strong>
+                            <p class="small">Depend on abstractions, not concretions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Real-world Application -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card bg-light animate-fade-up animate-delay-1">
+                <div class="card-header">
+                    <h3>Real-World Application: E-Commerce System</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Class Hierarchy:</h5>
+                            <ul>
+                                <li><strong>Product</strong> (Abstract base class)</li>
+                                <li><strong>Electronics, Clothing, Books</strong> (Inherited classes)</li>
+                                <li><strong>ShoppingCart</strong> (Composition with Product)</li>
+                                <li><strong>PaymentProcessor</strong> (Interface)</li>
+                                <li><strong>CreditCard, PayPal</strong> (Implementations)</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>OOP Benefits Demonstrated:</h5>
+                            <ul>
+                                <li><strong>Encapsulation:</strong> Product price is private, accessed via methods</li>
+                                <li><strong>Inheritance:</strong> All products inherit common properties</li>
+                                <li><strong>Polymorphism:</strong> Different payment methods, same interface</li>
+                                <li><strong>Abstraction:</strong> Payment processing complexity hidden</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Home Section -->
+
+    <!-- Documentation Section -->
+    <div id="documentation" style="background: yellow; padding: 20px; margin: 20px 0;">
+        <h1 style="color: red;">DEBUGGING: activeSection() = "{{ activeSection() }}" | Expected: "documentation"</h1>
+        <h2 style="color: blue;">Comparison Result: {{ activeSection() === 'documentation' ? 'TRUE - SHOULD SHOW' : 'FALSE - SHOULD HIDE' }}</h2>
+        <div [style.display]="activeSection() === 'documentation' ? 'block' : 'none'">
+            <h3 style="color: green;">THIS CONTENT SHOULD ONLY SHOW WHEN DOCUMENTATION IS SELECTED</h3>
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center mb-5 title-animate animate-fade-up">Angular Project Documentation</h1>
+                    <p class="text-center lead mb-5">Explore the Angular structure that powers this OOP showcase</p>
+                    
+                    <!-- Temporary Debug -->
+                    <div class="alert alert-warning">
+                        <strong>Debug:</strong> Documentation section is visible! selectedScreen = {{ selectedScreen() }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Screen Selection -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">🖥️ Select Page/Component to Analyze</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <h6 class="text-muted">📑 Main Pages</h6>
+                                <div class="btn-group-vertical w-100" role="group">
+                                    <button type="button" 
+                                            class="btn btn-sm mb-2"
+                                            [class.btn-primary]="selectedScreen() === 'home-page'"
+                                            [class.btn-outline-primary]="selectedScreen() !== 'home-page'"
+                                            (click)="setSelectedScreen('home-page')">
+                                        🏠 Home Page Structure
+                                    </button>
+                                    <button type="button" 
+                                            class="btn btn-sm mb-2"
+                                            [class.btn-success]="selectedScreen() === 'features-page'"
+                                            [class.btn-outline-success]="selectedScreen() !== 'features-page'"
+                                            (click)="setSelectedScreen('features-page')">
+                                        ⭐ Features Page
+                                    </button>
+                                    <button type="button" 
+                                            class="btn btn-sm mb-2"
+                                            [class.btn-info]="selectedScreen() === 'documentation-page'"
+                                            [class.btn-outline-info]="selectedScreen() !== 'documentation-page'"
+                                            (click)="setSelectedScreen('documentation-page')">
+                                        📚 Documentation Page
+                                    </button>
+                                    <button type="button" 
+                                            class="btn btn-sm mb-2"
+                                            [class.btn-warning]="selectedScreen() === 'about-page'"
+                                            [class.btn-outline-warning]="selectedScreen() !== 'about-page'"
+                                            (click)="setSelectedScreen('about-page')">
+                                        ℹ️ About Page
+                                    </button>
+                                    <button type="button" 
+                                            class="btn btn-sm"
+                                            [class.btn-dark]="selectedScreen() === 'contact-page'"
+                                            [class.btn-outline-dark]="selectedScreen() !== 'contact-page'"
+                                            (click)="setSelectedScreen('contact-page')">
+                                        📞 Contact Page
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <h6 class="text-muted">🧩 Components & Features</h6>
+                                <div class="btn-group-vertical w-100" role="group">
+                                    <button type="button" 
+                                            class="btn btn-sm mb-2"
+                                            [class.btn-secondary]="selectedScreen() === 'navbar'"
+                                            [class.btn-outline-secondary]="selectedScreen() !== 'navbar'"
+                                            (click)="setSelectedScreen('navbar')">
+                                        🧭 Navigation Component
+                                    </button>
+                                    <button type="button" 
+                                            class="btn btn-sm mb-2"
+                                            [class.btn-secondary]="selectedScreen() === 'cards'"
+                                            [class.btn-outline-secondary]="selectedScreen() !== 'cards'"
+                                            (click)="setSelectedScreen('cards')">
+                                        🃏 OOP Cards Component
+                                    </button>
+                                    <button type="button" 
+                                            class="btn btn-sm mb-2"
+                                            [class.btn-secondary]="selectedScreen() === 'animations'"
+                                            [class.btn-outline-secondary]="selectedScreen() !== 'animations'"
+                                            (click)="setSelectedScreen('animations')">
+                                        ✨ Animation System
+                                    </button>
+                                    <button type="button" 
+                                            class="btn btn-sm"
+                                            [class.btn-secondary]="selectedScreen() === 'routing'"
+                                            [class.btn-outline-secondary]="selectedScreen() !== 'routing'"
+                                            (click)="setSelectedScreen('routing')">
+                                        🔗 Routing & State
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentation Content -->
+        <div class="row">
+            <div class="col-12">
+                
+                <!-- Home Page Documentation -->
+                <div [style.display]="selectedScreen() === 'home-page' ? 'block' : 'none'">
+                    <div class="card mb-4 animate-fade-up">
+                        <div class="card-header bg-primary text-white">
+                            <h4>🏠 Home Page - Complete Structure Analysis</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>📋 Page Components Breakdown</h5>
+                                    <div class="list-group list-group-flush">
+                                        <div class="list-group-item">
+                                            <strong>🎨 Title Section</strong>
+                                            <p class="mb-1">Animated gradient title with fade-up entrance</p>
+                                            <small class="text-muted">Uses CSS keyframes and Angular animations</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <strong>🧱 Four Pillars Cards</strong>
+                                            <p class="mb-1">4 Bootstrap cards in 2x2 grid layout</p>
+                                            <small class="text-muted">Encapsulation, Inheritance, Polymorphism, Abstraction</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <strong>🎯 Design Patterns</strong>
+                                            <p class="mb-1">3-column layout with pattern descriptions</p>
+                                            <small class="text-muted">Singleton, Factory, Observer patterns</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <strong>🔧 SOLID Principles</strong>
+                                            <p class="mb-1">Single-row grid with 5 principle columns</p>
+                                            <small class="text-muted">Interactive principle cards with pulse animation</small>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <strong>🛒 Real-world Example</strong>
+                                            <p class="mb-1">E-commerce system case study</p>
+                                            <small class="text-muted">Demonstrates OOP concepts in practice</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>🏗️ Template Structure</h5>
+                                    <pre class="bg-light p-3"><code>&lt;div id="home" [style.display]="activeSection() === 'home' ? 'block' : 'none'"&gt;
+  &lt;!-- Title Section --&gt;
+  &lt;h1 class="title-animate animate-fade-up"&gt;...&lt;/h1&gt;
+  
+  &lt;!-- Four Pillars (2x2 Grid) --&gt;
+  &lt;div class="row mb-5"&gt;
+    &lt;div class="col-md-6"&gt;...&lt;/div&gt;
+    &lt;div class="col-md-6"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Design Patterns (1x3 Grid) --&gt;
+  &lt;div class="row mb-5"&gt;
+    &lt;div class="col-md-4"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- SOLID Principles (1x5 Grid) --&gt;
+  &lt;div class="row mb-5"&gt;
+    &lt;div class="col-md-2"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                                    <h5 class="mt-4">⚡ Special Features</h5>
+                                    <ul>
+                                        <li><strong>Conditional Display:</strong> [style.display] binding with signals</li>
+                                        <li><strong>Staggered Animations:</strong> .animate-delay-1, .animate-delay-2</li>
+                                        <li><strong>Code Escaping:</strong> {{ '{' }} syntax for displaying code</li>
+                                        <li><strong>Responsive Grid:</strong> Bootstrap col-md-* classes</li>
+                                        <li><strong>Card Heights:</strong> .h-100 for equal height cards</li>
+                                        <li><strong>Color Themes:</strong> bg-primary, bg-success, bg-warning, bg-danger</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Page Documentation -->
+                <div [style.display]="selectedScreen() === 'features-page' ? 'block' : 'none'">
+                    <div class="card mb-4 animate-fade-up">
+                        <div class="card-header bg-success text-white">
+                            <h4>⭐ Features Page - Structure & Purpose</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>🎯 Current Implementation</h5>
+                                    <pre class="bg-light p-3"><code>&lt;div id="features" [style.display]="activeSection() === 'features' ? 'block' : 'none'"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-12"&gt;
+      &lt;h1 class="text-center mb-5 title-animate animate-fade-up"&gt;Features&lt;/h1&gt;
+      &lt;p class="text-center lead"&gt;Coming soon...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    
+                                    <h5 class="mt-4">📋 Placeholder Structure</h5>
+                                    <ul>
+                                        <li><strong>Signal Binding:</strong> Uses activeSection() signal for visibility</li>
+                                        <li><strong>Centered Layout:</strong> text-center for all content</li>
+                                        <li><strong>Consistent Styling:</strong> Same title-animate class as other pages</li>
+                                        <li><strong>Bootstrap Grid:</strong> Standard row/col-12 structure</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>💡 Recommended Content Structure</h5>
+                                    <div class="bg-light p-3">
+                                        <h6>Potential Features to Showcase:</h6>
+                                        <ul class="mb-3">
+                                            <li>🚀 <strong>Performance:</strong> Angular Signals, Zoneless</li>
+                                            <li>📱 <strong>Responsive:</strong> Bootstrap 5 grid system</li>
+                                            <li>🎨 <strong>Animations:</strong> CSS3 transitions and keyframes</li>
+                                            <li>♿ <strong>Accessibility:</strong> ARIA labels, semantic HTML</li>
+                                            <li>🔧 <strong>Modern Angular:</strong> Standalone components, SSR</li>
+                                            <li>🎯 <strong>TypeScript:</strong> Type safety and IntelliSense</li>
+                                        </ul>
+                                        <h6>Layout Suggestion:</h6>
+                                        <ul>
+                                            <li>Feature cards in 3x2 grid</li>
+                                            <li>Interactive demos for each feature</li>
+                                            <li>Performance metrics display</li>
+                                            <li>Code snippets with syntax highlighting</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documentation Page Documentation -->
+                <div [style.display]="selectedScreen() === 'documentation-page' ? 'block' : 'none'">
+                    <div class="card mb-4 animate-fade-up">
+                        <div class="card-header bg-info text-white">
+                            <h4>📚 Documentation Page - Meta Documentation</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>🔄 Self-Referential Structure</h5>
+                                    <p class="text-muted">This page documents itself and the entire application</p>
+                                    <pre class="bg-light p-3"><code>&lt;div id="documentation" [style.display]="activeSection() === 'documentation' ? 'block' : 'none'"&gt;
+  &lt;!-- Title Section --&gt;
+  &lt;h1&gt;Angular Project Documentation&lt;/h1&gt;
+  
+  &lt;!-- Screen Selection Component --&gt;
+  &lt;div class="card"&gt;
+    &lt;div class="btn-group-vertical"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Dynamic Content Display --&gt;
+  &lt;div [style.display]="selectedScreen() === 'page' ? 'block' : 'none'"&gt;
+    &lt;!-- Page-specific documentation --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    
+                                    <h5 class="mt-4">🧩 Component Features</h5>
+                                    <ul>
+                                        <li><strong>Nested State:</strong> activeSection + selectedScreen signals</li>
+                                        <li><strong>Dynamic Buttons:</strong> Conditional styling with [class.*]</li>
+                                        <li><strong>Organized Layout:</strong> Two-column button groups</li>
+                                        <li><strong>Interactive Content:</strong> Real-time content switching</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>📊 Signal State Management</h5>
+                                    <pre class="bg-light p-3"><code>// Component signals
+protected activeSection = signal('home');
+protected selectedScreen = signal('home-page');
+
+// State management methods
+setActiveSection(section: string) {{ '{' }}
+  this.activeSection.set(section);
+{{ '}' }}
+
+setSelectedScreen(screen: string) {{ '{' }}
+  this.selectedScreen.set(screen);
+{{ '}' }}</code></pre>
+
+                                    <h5 class="mt-4">🎨 UI/UX Design Patterns</h5>
+                                    <ul>
+                                        <li><strong>Progressive Disclosure:</strong> Show relevant docs only</li>
+                                        <li><strong>Visual Hierarchy:</strong> Color-coded button groups</li>
+                                        <li><strong>Consistent Navigation:</strong> Unified selection interface</li>
+                                        <li><strong>Responsive Design:</strong> Stacked buttons on mobile</li>
+                                        <li><strong>Accessibility:</strong> ARIA roles and semantic HTML</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Page Documentation -->
+                <div [style.display]="selectedScreen() === 'about-page' ? 'block' : 'none'">
+                    <div class="card mb-4 animate-fade-up">
+                        <div class="card-header bg-warning text-white">
+                            <h4>ℹ️ About Page - Project Information</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>📄 Current State</h5>
+                                    <pre class="bg-light p-3"><code>&lt;div id="about" [style.display]="activeSection() === 'about' ? 'block' : 'none'"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-12"&gt;
+      &lt;h1 class="text-center mb-5 title-animate animate-fade-up"&gt;About&lt;/h1&gt;
+      &lt;p class="text-center lead"&gt;Coming soon...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    
+                                    <h5 class="mt-4">🎯 Purpose & Goals</h5>
+                                    <ul>
+                                        <li><strong>Project Background:</strong> OOP educational showcase</li>
+                                        <li><strong>Technology Stack:</strong> Angular 20, Bootstrap 5, TypeScript</li>
+                                        <li><strong>Learning Objectives:</strong> Demonstrate modern web development</li>
+                                        <li><strong>Target Audience:</strong> Employers, students, developers</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>💡 Recommended Content</h5>
+                                    <div class="bg-light p-3">
+                                        <h6>Suggested About Page Sections:</h6>
+                                        <ul class="mb-3">
+                                            <li>👨‍💻 <strong>Developer Profile:</strong> Skills and experience</li>
+                                            <li>🎯 <strong>Project Goals:</strong> Educational and portfolio objectives</li>
+                                            <li>🛠️ <strong>Technology Stack:</strong> Detailed tech specifications</li>
+                                            <li>📚 <strong>Learning Journey:</strong> Development process insights</li>
+                                            <li>🔗 <strong>Resources Used:</strong> References and inspirations</li>
+                                            <li>🚀 <strong>Future Plans:</strong> Planned enhancements</li>
+                                        </ul>
+                                        <h6>Layout Ideas:</h6>
+                                        <ul>
+                                            <li>Timeline of project development</li>
+                                            <li>Technology logos with descriptions</li>
+                                            <li>Personal statement with photo</li>
+                                            <li>Links to GitHub and portfolio</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Page Documentation -->
+                <div [style.display]="selectedScreen() === 'contact-page' ? 'block' : 'none'">
+                    <div class="card mb-4 animate-fade-up">
+                        <div class="card-header bg-dark text-white">
+                            <h4>📞 Contact Page - Communication Interface</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>📄 Current Implementation</h5>
+                                    <pre class="bg-light p-3"><code>&lt;div id="contact" [style.display]="activeSection() === 'contact' ? 'block' : 'none'"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-12"&gt;
+      &lt;h1 class="text-center mb-5 title-animate animate-fade-up"&gt;Contact&lt;/h1&gt;
+      &lt;p class="text-center lead"&gt;Coming soon...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    
+                                    <h5 class="mt-4">🔧 Technical Considerations</h5>
+                                    <ul>
+                                        <li><strong>Form Validation:</strong> Angular reactive forms</li>
+                                        <li><strong>Email Integration:</strong> EmailJS or backend service</li>
+                                        <li><strong>Data Binding:</strong> Two-way binding with signals</li>
+                                        <li><strong>Error Handling:</strong> User-friendly error messages</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>📮 Suggested Contact Features</h5>
+                                    <div class="bg-light p-3">
+                                        <h6>Professional Contact Form:</h6>
+                                        <ul class="mb-3">
+                                            <li>📧 <strong>Email Field:</strong> With validation</li>
+                                            <li>👤 <strong>Name Field:</strong> Required input</li>
+                                            <li>🏢 <strong>Company Field:</strong> Optional</li>
+                                            <li>📝 <strong>Message Area:</strong> Rich text support</li>
+                                            <li>🎯 <strong>Subject Dropdown:</strong> Inquiry types</li>
+                                            <li>🤖 <strong>reCAPTCHA:</strong> Spam protection</li>
+                                        </ul>
+                                        <h6>Contact Information Display:</h6>
+                                        <ul>
+                                            <li>Professional email address</li>
+                                            <li>LinkedIn profile link</li>
+                                            <li>GitHub repository link</li>
+                                            <li>Location information</li>
+                                            <li>Response time expectations</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navbar Component Documentation -->
+                <div [style.display]="selectedScreen() === 'navbar' ? 'block' : 'none'">
+                    <div class="card mb-4 animate-fade-up">
+                        <div class="card-header bg-secondary text-white">
+                            <h4>🧭 Navigation Component - Implementation Details</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>🔄 State Management</h5>
+                                    <pre class="bg-light p-3"><code>// Signal-based active section tracking
+protected activeSection = signal('home');
+
+setActiveSection(section: string) {{ '{' }}
+  this.activeSection.set(section);
+{{ '}' }}</code></pre>
+                                    
+                                    <h5 class="mt-4">📱 Responsive Features</h5>
+                                    <ul>
+                                        <li><strong>Bootstrap Navbar:</strong> .navbar-expand-md breakpoint</li>
+                                        <li><strong>Collapse Toggle:</strong> data-bs-toggle="collapse"</li>
+                                        <li><strong>Dynamic Classes:</strong> [class.active] binding</li>
+                                        <li><strong>Event Binding:</strong> (click) handlers for navigation</li>
+                                        <li><strong>Fluid Container:</strong> .container-fluid for full width</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>🎨 Template Structure</h5>
+                                    <pre class="bg-light p-3"><code>&lt;nav class="navbar navbar-expand-md navbar-dark bg-dark"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand"&gt;OOP Showcase&lt;/a&gt;
+    &lt;button class="navbar-toggler"&gt;...&lt;/button&gt;
+    &lt;div class="collapse navbar-collapse"&gt;
+      &lt;ul class="navbar-nav ms-auto"&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a [class.active]="activeSection() === 'home'" 
+             (click)="setActiveSection('home')"&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+
+                                    <h5 class="mt-4">⚡ Angular Features</h5>
+                                    <ul>
+                                        <li><strong>Property Binding:</strong> [class.active]</li>
+                                        <li><strong>Event Binding:</strong> (click)</li>
+                                        <li><strong>Signal Reading:</strong> activeSection()</li>
+                                        <li><strong>Conditional Classes:</strong> Dynamic active state</li>
+                                        <li><strong>Accessibility:</strong> ARIA attributes and roles</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards Component Documentation -->
+                <div [style.display]="selectedScreen() === 'cards' ? 'block' : 'none'">
+                    <div class="card mb-4 animate-fade-up">
+                        <div class="card-header bg-secondary text-white">
+                            <h4>🃏 OOP Cards Component - Educational Content Structure</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>🎯 Card Grid Layout</h5>
+                                    <pre class="bg-light p-3"><code>&lt;!-- Four Pillars: 2x2 Grid --&gt;
+&lt;div class="row mb-5"&gt;
+  &lt;div class="col-md-6 mb-4"&gt;
+    &lt;div class="card h-100 animate-slide-left"&gt;
+      &lt;div class="card-header bg-primary"&gt;
+        &lt;h4&gt;1. Encapsulation&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="card-body"&gt;
+        &lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; ...&lt;/p&gt;
+        &lt;pre&gt;&lt;code&gt;class BankAccount {{ '{' }}...{{ '}' }}&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    
+                                    <h5 class="mt-4">🎨 Color Coding System</h5>
+                                    <ul>
+                                        <li><strong>Encapsulation:</strong> bg-primary (Blue)</li>
+                                        <li><strong>Inheritance:</strong> bg-success (Green)</li>
+                                        <li><strong>Polymorphism:</strong> bg-warning (Yellow)</li>
+                                        <li><strong>Abstraction:</strong> bg-danger (Red)</li>
+                                        <li><strong>Design Patterns:</strong> bg-info (Cyan)</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>📚 Content Structure</h5>
+                                    <div class="bg-light p-3">
+                                        <h6>Each OOP Card Contains:</h6>
+                                        <ul class="mb-3">
+                                            <li>📖 <strong>Definition:</strong> Clear concept explanation</li>
+                                            <li>✅ <strong>Key Benefits:</strong> Bulleted advantage list</li>
+                                            <li>💻 <strong>Code Example:</strong> Real Java implementation</li>
+                                            <li>🎨 <strong>Visual Design:</strong> Color-coded headers</li>
+                                        </ul>
+                                        <h6>Template Escaping:</h6>
+                                        <ul>
+                                            <li>{{ '{' }} for opening braces</li>
+                                            <li>{{ '}' }} for closing braces</li>
+                                            <li>Preserves code readability</li>
+                                            <li>Prevents Angular template conflicts</li>
+                                        </ul>
+                                    </div>
+
+                                    <h5 class="mt-4">🔧 Bootstrap Features</h5>
+                                    <ul>
+                                        <li><strong>.h-100:</strong> Equal height cards</li>
+                                        <li><strong>.card-header:</strong> Colored section headers</li>
+                                        <li><strong>.col-md-*:</strong> Responsive grid system</li>
+                                        <li><strong>.mb-*:</strong> Consistent spacing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animations Documentation -->
+                <div [style.display]="selectedScreen() === 'animations' ? 'block' : 'none'">
+                    <div class="card mb-4 animate-fade-up">
+                        <div class="card-header bg-secondary text-white">
+                            <h4>✨ Animation System - CSS3 & Performance</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>🎬 Animation Types</h5>
+                                    <pre class="bg-light p-3"><code>@@keyframes fadeInUp {{ '{' }}
+  from {{ '{' }}
+    opacity: 0;
+    transform: translateY(30px);
+  {{ '}' }}
+  to {{ '{' }}
+    opacity: 1;
+    transform: translateY(0);
+  {{ '}' }}
+{{ '}' }}
+
+.animate-fade-up {{ '{' }}
+  animation: fadeInUp 0.6s ease-out forwards;
+{{ '}' }}</code></pre>
+                                    
+                                    <h5 class="mt-4">⚡ Animation Classes</h5>
+                                    <ul>
+                                        <li><strong>.animate-fade-up:</strong> Entrance from bottom</li>
+                                        <li><strong>.animate-slide-left:</strong> Slide from left</li>
+                                        <li><strong>.animate-slide-right:</strong> Slide from right</li>
+                                        <li><strong>.animate-pulse:</strong> Continuous pulsing</li>
+                                        <li><strong>.animate-delay-*:</strong> Staggered timing</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>🌈 Gradient Title Animation</h5>
+                                    <pre class="bg-light p-3"><code>.title-animate {{ '{' }}
+  background: linear-gradient(45deg, 
+    #007bff, #28a745, #ffc107, #dc3545);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 3s ease-in-out infinite;
+{{ '}' }}
+
+@@keyframes gradientShift {{ '{' }}
+  0%, 100% {{ '{' }} background-position: 0% 50%; {{ '}' }}
+  50% {{ '{' }} background-position: 100% 50%; {{ '}' }}
+{{ '}' }}</code></pre>
+
+                                    <h5 class="mt-4">🚀 Performance Optimizations</h5>
+                                    <ul>
+                                        <li><strong>Transform-based:</strong> GPU acceleration</li>
+                                        <li><strong>will-change:</strong> Browser optimization hints</li>
+                                        <li><strong>Easing Functions:</strong> Natural motion curves</li>
+                                        <li><strong>Reduced Motion:</strong> Accessibility considerations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Routing & State Documentation -->
+                <div [style.display]="selectedScreen() === 'routing' ? 'block' : 'none'">
+                    <div class="card mb-4 animate-fade-up">
+                        <div class="card-header bg-secondary text-white">
+                            <h4>🔗 Routing & State Management - Signal Architecture</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>📡 Signal-Based State</h5>
+                                    <pre class="bg-light p-3"><code>export class App {{ '{' }}
+  // Navigation state
+  protected activeSection = signal('home');
+  
+  // Documentation state  
+  protected selectedScreen = signal('home-page');
+  
+  // State management methods
+  setActiveSection(section: string) {{ '{' }}
+    this.activeSection.set(section);
+  {{ '}' }}
+  
+  setSelectedScreen(screen: string) {{ '{' }}
+    this.selectedScreen.set(screen);
+  {{ '}' }}
+{{ '}' }}</code></pre>
+                                    
+                                    <h5 class="mt-4">🔄 State Flow</h5>
+                                    <ul>
+                                        <li><strong>Single Source of Truth:</strong> Component signals</li>
+                                        <li><strong>Reactive Updates:</strong> Automatic UI synchronization</li>
+                                        <li><strong>Type Safety:</strong> TypeScript string literals</li>
+                                        <li><strong>Performance:</strong> Fine-grained reactivity</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>🎯 Template Reactivity</h5>
+                                    <pre class="bg-light p-3"><code>&lt;!-- Conditional display based on signals --&gt;
+&lt;div [style.display]="activeSection() === 'home' ? 'block' : 'none'"&gt;
+  &lt;!-- Home content --&gt;
+&lt;/div&gt;
+
+&lt;!-- Dynamic class binding --&gt;
+&lt;a [class.active]="activeSection() === 'home'"
+   (click)="setActiveSection('home')"&gt;
+   Home
+&lt;/a&gt;
+
+&lt;!-- Nested state management --&gt;
+&lt;div [style.display]="selectedScreen() === 'home-page' ? 'block' : 'none'"&gt;
+  &lt;!-- Documentation content --&gt;
+&lt;/div&gt;</code></pre>
+
+                                    <h5 class="mt-4">🏗️ Architecture Benefits</h5>
+                                    <ul>
+                                        <li><strong>No Zone.js:</strong> Optimal performance</li>
+                                        <li><strong>Standalone Components:</strong> Simplified dependencies</li>
+                                        <li><strong>Signal Composition:</strong> Reactive data flow</li>
+                                        <li><strong>Future-Proof:</strong> Modern Angular patterns</li>
+                                        <li><strong>SSR Compatible:</strong> Server-side rendering ready</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Documentation Section -->
+
+    <!-- Features Section (placeholder) -->
+    <div id="features" [style.display]="activeSection() === 'features' ? 'block' : 'none'">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center mb-5 title-animate animate-fade-up">Features</h1>
+                <p class="text-center lead">Coming soon...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section (placeholder) -->
+    <div id="about" [style.display]="activeSection() === 'about' ? 'block' : 'none'">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center mb-5 title-animate animate-fade-up">About</h1>
+                <p class="text-center lead">Coming soon...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section (placeholder) -->
+    <div id="contact" [style.display]="activeSection() === 'contact' ? 'block' : 'none'">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center mb-5 title-animate animate-fade-up">Contact</h1>
+                <p class="text-center lead">Coming soon...</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<router-outlet></router-outlet>

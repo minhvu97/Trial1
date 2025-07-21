@@ -1,0 +1,24 @@
+<!-- OOP Pillars Component Template -->
+<div class="row mb-5" id="pillars">
+  <div class="col-12 mb-4">
+    <h2 class="text-center">The Four Pillars of OOP</h2>
+  </div>
+  
+  <div class="col-md-6 mb-4" *ngFor="let pillar of oopPillars; let i = index">
+    <div class="card h-100" 
+         [ngClass]="getAnimationClass(i)"
+         [style.background-color]="pillar.headerColor">
+      <div class="card-header text-white">
+        <h4>{{ i + 1 }}. {{ pillar.title }}</h4>
+      </div>
+      <div class="card-body" style="background-color: white;">
+        <p><strong>Definition:</strong> {{ pillar.definition }}</p>
+        <p><strong>Key Benefits:</strong></p>
+        <ul>
+          <li *ngFor="let benefit of pillar.benefits">{{ benefit }}</li>
+        </ul>
+        <pre><code>{{ pillar.codeExample }}</code></pre>
+      </div>
+    </div>
+  </div>
+</div>

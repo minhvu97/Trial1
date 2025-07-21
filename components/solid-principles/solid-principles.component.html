@@ -1,0 +1,30 @@
+<!-- SOLID Principles Component Template -->
+<div class="row mb-5" id="solid">
+  <div class="col-12">
+    <h2 class="text-center mb-4 animate-fade-up">SOLID Principles</h2>
+  </div>
+  <div class="col-12">
+    <div class="card animate-fade-up animate-delay-1">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-2 text-center" 
+               *ngFor="let principle of solidPrinciples; let i = index"
+               [ngClass]="getColumnClass(i)">
+            <h3 [ngClass]="principle.colorClass + ' animate-pulse'">
+              {{ principle.letter }}
+            </h3>
+            <strong>{{ principle.name }}</strong>
+            <p class="small">{{ principle.description }}</p>
+            <button class="btn btn-outline-secondary btn-sm mt-2" 
+                    (click)="toggleExample(i)">
+              {{ principle.showExample ? 'Hide' : 'Show' }} Example
+            </button>
+            <div class="mt-2" *ngIf="principle.showExample">
+              <pre class="text-start"><code>{{ principle.example }}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
