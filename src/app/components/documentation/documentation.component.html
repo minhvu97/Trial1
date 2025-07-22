@@ -1,0 +1,812 @@
+<!-- Documentation Header -->
+<div class="documentation-header text-center">
+  <div class="container">
+    <h1 class="gradient-text">📚 Angular Architecture Documentation</h1>
+    <p class="lead">Comprehensive technical documentation for the OOP Showcase Application</p>
+    <div class="stats-grid mt-4">
+      <div class="stat-item">
+        <span class="stat-number">6</span>
+        <span class="stat-label">Components</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">Angular 20</span>
+        <span class="stat-label">Framework</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">TypeScript</span>
+        <span class="stat-label">Language</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">Bootstrap 5</span>
+        <span class="stat-label">UI Framework</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section Selector -->
+<div class="section-selector">
+  <div class="row">
+    <div class="col-12">
+      <h4><span class="icon-large">🎯</span> Select Component or Feature to Explore</h4>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-lg-6 mb-4">
+      <div class="category-title">📄 Application Pages</div>
+      <div class="d-grid gap-2">
+        <button type="button" 
+                class="btn btn-selector"
+                [class.btn-primary]="selectedScreen() === 'home-page'"
+                [class.btn-outline-primary]="selectedScreen() !== 'home-page'"
+                (click)="setSelectedScreen('home-page')">
+          <span class="icon-large">🏠</span> Home Component - OOP Educational Hub
+        </button>
+        <button type="button" 
+                class="btn btn-selector"
+                [class.btn-success]="selectedScreen() === 'features-page'"
+                [class.btn-outline-success]="selectedScreen() !== 'features-page'"
+                (click)="setSelectedScreen('features-page')">
+          <span class="icon-large">⭐</span> Features Component - Technology Showcase
+        </button>
+        <button type="button" 
+                class="btn btn-selector"
+                [class.btn-warning]="selectedScreen() === 'about-page'"
+                [class.btn-outline-warning]="selectedScreen() !== 'about-page'"
+                (click)="setSelectedScreen('about-page')">
+          <span class="icon-large">ℹ️</span> About Component - Project Information
+        </button>
+        <button type="button" 
+                class="btn btn-selector"
+                [class.btn-dark]="selectedScreen() === 'contact-page'"
+                [class.btn-outline-dark]="selectedScreen() !== 'contact-page'"
+                (click)="setSelectedScreen('contact-page')">
+          <span class="icon-large">📞</span> Contact Component - Professional Links
+        </button>
+      </div>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+      <div class="category-title">🔧 Technical Features</div>
+      <div class="d-grid gap-2">
+        <button type="button" 
+                class="btn btn-selector"
+                [class.btn-secondary]="selectedScreen() === 'navigation'"
+                [class.btn-outline-secondary]="selectedScreen() !== 'navigation'"
+                (click)="setSelectedScreen('navigation')">
+          <span class="icon-large">🧭</span> Navigation System - Component Communication
+        </button>
+        <button type="button" 
+                class="btn btn-selector"
+                [class.btn-secondary]="selectedScreen() === 'animations'"
+                [class.btn-outline-secondary]="selectedScreen() !== 'animations'"
+                (click)="setSelectedScreen('animations')">
+          <span class="icon-large">✨</span> Animation Framework - CSS3 Performance
+        </button>
+        <button type="button" 
+                class="btn btn-selector"
+                [class.btn-secondary]="selectedScreen() === 'state-management'"
+                [class.btn-outline-secondary]="selectedScreen() !== 'state-management'"
+                (click)="setSelectedScreen('state-management')">
+          <span class="icon-large">🔄</span> State Management - Angular Signals
+        </button>
+        <button type="button" 
+                class="btn btn-selector"
+                [class.btn-secondary]="selectedScreen() === 'architecture'"
+                [class.btn-outline-secondary]="selectedScreen() !== 'architecture'"
+                (click)="setSelectedScreen('architecture')">
+          <span class="icon-large">🏗️</span> Application Architecture - Project Structure
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Documentation Content -->
+<div class="documentation-content">
+  
+  <!-- Home Component Documentation -->
+  <div *ngIf="selectedScreen() === 'home-page'" class="fade-in">
+    <div class="content-card">
+      <div class="card-header bg-primary text-white">
+        <h4><span class="icon-large">🏠</span> Home Component - Educational Content Hub</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="gradient-text">📋 Component Overview</h5>
+            <div class="highlight-box">
+              <h6>File Location</h6>
+              <code>src/app/components/home/home.component.ts</code>
+            </div>
+            <p><strong>Primary Purpose:</strong> Serves as the main educational hub for Object-Oriented Programming concepts, presenting four fundamental pillars, design patterns, and SOLID principles in an interactive, visually appealing format.</p>
+            
+            <h6>📚 Educational Content Sections:</h6>
+            <ul class="feature-list">
+              <li><strong>Four OOP Pillars:</strong> Comprehensive coverage of Encapsulation, Inheritance, Polymorphism, and Abstraction with practical Java examples</li>
+              <li><strong>Design Patterns:</strong> Interactive exploration of Singleton, Factory, and Observer patterns with real-world applications</li>
+              <li><strong>SOLID Principles:</strong> Detailed breakdown of software design principles with practical implementation guidance</li>
+              <li><strong>Real-world Case Study:</strong> E-commerce system example demonstrating OOP concepts in action</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5 class="gradient-text">🎨 Technical Implementation</h5>
+            
+            <div class="architecture-diagram">
+              <strong>Component Architecture</strong>
+              <div class="mt-3">
+                <div class="tech-badge">Standalone Component</div>
+                <div class="tech-badge">Bootstrap 5 Grid</div>
+                <div class="tech-badge">CSS3 Animations</div>
+                <div class="tech-badge">Responsive Design</div>
+              </div>
+            </div>
+            
+            <h6>🔧 Key Features:</h6>
+            <ul class="feature-list">
+              <li><strong>Responsive Grid System:</strong> Utilizes Bootstrap's col-md-6 classes for optimal mobile and desktop layouts</li>
+              <li><strong>Equal Height Cards:</strong> Implements .h-100 class ensuring uniform card heights across different content lengths</li>
+              <li><strong>Color-coded Themes:</strong> Each OOP pillar uses distinct color schemes for enhanced visual learning</li>
+              <li><strong>Staggered Animations:</strong> CSS animation delays create smooth, sequential content reveals</li>
+              <li><strong>Syntax Highlighting:</strong> Pre-formatted Java code blocks with proper indentation and highlighting</li>
+            </ul>
+            
+            <div class="code-section">
+              <pre><code>// Example: Encapsulation Implementation
+export class HomeComponent {{ '{' }}
+  // Demonstrates component encapsulation
+  private educationalContent = {{ '{' }}
+    pillars: ['Encapsulation', 'Inheritance', 'Polymorphism', 'Abstraction'],
+    patterns: ['Singleton', 'Factory', 'Observer']
+  {{ '}' }};
+{{ '}' }}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Component Documentation -->
+  <div *ngIf="selectedScreen() === 'features-page'" class="fade-in">
+    <div class="content-card">
+      <div class="card-header bg-success text-white">
+        <h4><span class="icon-large">⭐</span> Features Component - Technology Stack Showcase</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="gradient-text">🚀 Implementation Status</h5>
+            <div class="highlight-box">
+              <h6>Component Details</h6>
+              <p><strong>File:</strong> <code>src/app/components/features/features.component.ts</code><br>
+              <strong>Status:</strong> ✅ Complete implementation with enhanced content<br>
+              <strong>Type:</strong> Standalone Angular component with inline template</p>
+            </div>
+            
+            <h6>💡 Featured Technologies:</h6>
+            <div class="row">
+              <div class="col-6 mb-3">
+                <div class="tech-badge">Angular 20.1.1</div>
+                <small class="d-block text-muted">Latest framework features</small>
+              </div>
+              <div class="col-6 mb-3">
+                <div class="tech-badge">Bootstrap 5.3.2</div>
+                <small class="d-block text-muted">Responsive UI framework</small>
+              </div>
+              <div class="col-6 mb-3">
+                <div class="tech-badge">TypeScript 5.7</div>
+                <small class="d-block text-muted">Type safety & modern JS</small>
+              </div>
+              <div class="col-6 mb-3">
+                <div class="tech-badge">CSS3 Animations</div>
+                <small class="d-block text-muted">Performance optimized</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h5 class="gradient-text">⚡ Technical Highlights</h5>
+            
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-number">6</span>
+                <span class="stat-label">Components</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">TypeScript</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">0</span>
+                <span class="stat-label">Dependencies</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">A11Y</span>
+                <span class="stat-label">Accessible</span>
+              </div>
+            </div>
+            
+            <h6>🏗️ Architecture Benefits:</h6>
+            <ul class="feature-list">
+              <li><strong>Standalone Components:</strong> Zero NgModule dependencies, faster loading</li>
+              <li><strong>Signal-based Reactivity:</strong> Fine-grained updates, better performance</li>
+              <li><strong>Mobile-first Design:</strong> Progressive enhancement from mobile to desktop</li>
+              <li><strong>Modern ES6+ Features:</strong> Arrow functions, destructuring, async/await</li>
+              <li><strong>WCAG 2.1 Compliance:</strong> Screen reader support, keyboard navigation</li>
+            </ul>
+            
+            <div class="code-section">
+              <pre><code>// Standalone Component Declaration
+@Component({{ '{' }}
+  selector: 'app-features',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    &lt;div class="feature-showcase"&gt;
+      &lt;!-- Responsive feature cards --&gt;
+    &lt;/div&gt;
+  `
+{{ '}' }})</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Component Documentation -->
+  <div *ngIf="selectedScreen() === 'about-page'" class="fade-in">
+    <div class="content-card">
+      <div class="card-header bg-warning text-dark">
+        <h4><span class="icon-large">ℹ️</span> About Component - Project Information & Context</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="gradient-text">📄 Project Background</h5>
+            <div class="highlight-box">
+              <h6>Development Context</h6>
+              <p><strong>File:</strong> <code>src/app/components/about/about.component.ts</code><br>
+              <strong>Objective:</strong> Educational showcase combining Angular best practices with OOP fundamentals<br>
+              <strong>Target Audience:</strong> Developers, students, and technical professionals</p>
+            </div>
+            
+            <h6>🎯 Project Goals:</h6>
+            <ul class="feature-list">
+              <li><strong>Educational Value:</strong> Clear, interactive explanations of complex OOP concepts</li>
+              <li><strong>Technical Excellence:</strong> Demonstrate modern Angular development practices</li>
+              <li><strong>Professional Presentation:</strong> Portfolio-ready code quality and documentation</li>
+              <li><strong>Responsive Design:</strong> Optimal experience across all device types</li>
+              <li><strong>Performance Optimization:</strong> Fast loading, smooth animations, efficient rendering</li>
+            </ul>
+            
+            <div class="architecture-diagram">
+              <strong>Learning Outcomes</strong>
+              <div class="mt-3">
+                <div class="tech-badge">Angular Mastery</div>
+                <div class="tech-badge">OOP Understanding</div>
+                <div class="tech-badge">Modern Web Development</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h5 class="gradient-text">🛠️ Technical Stack & Architecture</h5>
+            
+            <h6>🔧 Core Technologies:</h6>
+            <div class="row mb-3">
+              <div class="col-12">
+                <div class="tech-badge">Angular 20.1.1 - Standalone Components</div>
+                <div class="tech-badge">TypeScript 5.7 - Type Safety</div>
+                <div class="tech-badge">Bootstrap 5.3.2 - UI Framework</div>
+                <div class="tech-badge">CSS3 - Advanced Animations</div>
+                <div class="tech-badge">HTML5 - Semantic Structure</div>
+              </div>
+            </div>
+            
+            <h6>📈 Development Approach:</h6>
+            <ul class="feature-list">
+              <li><strong>Component-driven Architecture:</strong> Modular, reusable, maintainable code structure</li>
+              <li><strong>Mobile-first Development:</strong> Progressive enhancement methodology</li>
+              <li><strong>Performance-first:</strong> Optimized bundle size, lazy loading, tree shaking</li>
+              <li><strong>Accessibility-focused:</strong> ARIA labels, keyboard navigation, screen reader support</li>
+              <li><strong>Modern Tooling:</strong> Angular CLI, TypeScript compiler, development server</li>
+            </ul>
+            
+            <div class="code-section">
+              <pre><code>// Project Structure Overview
+src/
+├── app/
+│   ├── components/
+│   │   ├── home/           // OOP education hub
+│   │   ├── features/       // Tech showcase
+│   │   ├── about/          // Project info
+│   │   ├── contact/        // Professional links
+│   │   ├── navigation/     // UI navigation
+│   │   └── documentation/  // This component
+│   └── styles.css          // Global styles</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Component Documentation -->
+  <div *ngIf="selectedScreen() === 'contact-page'" class="fade-in">
+    <div class="content-card">
+      <div class="card-header bg-dark text-white">
+        <h4><span class="icon-large">📞</span> Contact Component - Professional Communication Interface</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="gradient-text">📮 Contact Features</h5>
+            <div class="highlight-box">
+              <h6>Component Purpose</h6>
+              <p><strong>File:</strong> <code>src/app/components/contact/contact.component.ts</code><br>
+              <strong>Function:</strong> Professional networking and collaboration interface<br>
+              <strong>Target:</strong> Potential employers, collaborators, and fellow developers</p>
+            </div>
+            
+            <h6>🔗 Professional Links:</h6>
+            <ul class="feature-list">
+              <li><strong>LinkedIn Profile:</strong> Professional networking and career information</li>
+              <li><strong>GitHub Repository:</strong> Source code access and project portfolio</li>
+              <li><strong>Email Contact:</strong> Direct professional communication channel</li>
+              <li><strong>Response Timeline:</strong> Clear expectations for communication response times</li>
+            </ul>
+            
+            <h6>💼 Collaboration Areas:</h6>
+            <div class="row">
+              <div class="col-6 mb-2">
+                <div class="tech-badge">Angular Development</div>
+              </div>
+              <div class="col-6 mb-2">
+                <div class="tech-badge">TypeScript Projects</div>
+              </div>
+              <div class="col-6 mb-2">
+                <div class="tech-badge">Educational Content</div>
+              </div>
+              <div class="col-6 mb-2">
+                <div class="tech-badge">Technical Writing</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h5 class="gradient-text">⚡ Design & User Experience</h5>
+            
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-number">&lt;24h</span>
+                <span class="stat-label">Email Response</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">LinkedIn</span>
+                <span class="stat-label">Preferred Contact</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">GitHub</span>
+                <span class="stat-label">Code Portfolio</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">Open Source</span>
+                <span class="stat-label">Collaboration</span>
+              </div>
+            </div>
+            
+            <h6>🎨 UI/UX Features:</h6>
+            <ul class="feature-list">
+              <li><strong>Professional Contact Cards:</strong> Clean, structured information presentation</li>
+              <li><strong>Interactive Hover Effects:</strong> Smooth transitions and visual feedback</li>
+              <li><strong>Social Media Integration:</strong> Direct links to professional profiles</li>
+              <li><strong>Mobile-responsive Layout:</strong> Optimized for all screen sizes</li>
+              <li><strong>Accessibility Features:</strong> Screen reader compatible, keyboard navigable</li>
+            </ul>
+            
+            <div class="code-section">
+              <pre><code>// Contact Component Structure
+@Component({{ '{' }}
+  selector: 'app-contact',
+  standalone: true,
+  template: `
+    &lt;div class="contact-grid"&gt;
+      &lt;div class="contact-card" *ngFor="let contact of contacts"&gt;
+        &lt;a [href]="contact.url" class="contact-link"&gt;
+          {{ '{{' }} contact.platform {{ '}}' }}
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  `
+{{ '}' }})</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation System Documentation -->
+  <div *ngIf="selectedScreen() === 'navigation'" class="fade-in">
+    <div class="content-card">
+      <div class="card-header bg-secondary text-white">
+        <h4><span class="icon-large">🧭</span> Navigation System - Component Communication Architecture</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="gradient-text">🔄 Component Communication Pattern</h5>
+            <div class="highlight-box">
+              <h6>Navigation Component</h6>
+              <p><strong>File:</strong> <code>src/app/components/navigation/navigation.component.ts</code><br>
+              <strong>Role:</strong> Central navigation hub with parent-child communication<br>
+              <strong>Pattern:</strong> @Input/@Output decorator pattern for data flow</p>
+            </div>
+            
+            <div class="code-section">
+              <pre><code>// Component Communication Pattern
+export class NavigationComponent {{ '{' }}
+  @Input() activeSection: string = 'home';
+  @Output() sectionChange = new EventEmitter&lt;string&gt;();
+
+  onNavClick(event: Event, section: string) {{ '{' }}
+    event.preventDefault();
+    this.sectionChange.emit(section);
+  {{ '}' }}
+{{ '}' }}</code></pre>
+            </div>
+            
+            <h6>📱 Responsive Navigation Features:</h6>
+            <ul class="feature-list">
+              <li><strong>Bootstrap Navbar:</strong> Mobile-friendly hamburger menu with collapse functionality</li>
+              <li><strong>Breakpoint Control:</strong> .navbar-expand-md for tablet and desktop expansion</li>
+              <li><strong>Active State Management:</strong> Dynamic [class.active] binding based on current section</li>
+              <li><strong>Event Handling:</strong> Proper preventDefault() to avoid page refreshes</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5 class="gradient-text">🎨 User Interface Design</h5>
+            
+            <div class="architecture-diagram">
+              <strong>Navigation Flow</strong>
+              <div class="mt-3">
+                <div class="tech-badge">User Click</div>
+                <div class="tech-badge">Event Emission</div>
+                <div class="tech-badge">State Update</div>
+                <div class="tech-badge">UI Refresh</div>
+              </div>
+            </div>
+            
+            <h6>⚡ Design Features:</h6>
+            <ul class="feature-list">
+              <li><strong>Brand Identity:</strong> "OOP Showcase" logo with consistent branding</li>
+              <li><strong>Dark Theme:</strong> Professional appearance with high contrast</li>
+              <li><strong>Right-aligned Menu:</strong> Modern layout following current design trends</li>
+              <li><strong>Smooth Transitions:</strong> CSS transitions for enhanced user experience</li>
+              <li><strong>Visual Feedback:</strong> Hover states and active indicators</li>
+            </ul>
+            
+            <h6>♿ Accessibility Implementation:</h6>
+            <div class="highlight-box">
+              <h6>WCAG 2.1 Compliance</h6>
+              <ul class="feature-list">
+                <li><strong>ARIA Labels:</strong> Descriptive labels for screen readers</li>
+                <li><strong>Keyboard Navigation:</strong> Full keyboard accessibility support</li>
+                <li><strong>Screen Reader Compatible:</strong> Semantic HTML structure</li>
+                <li><strong>Focus Management:</strong> Visible focus indicators</li>
+                <li><strong>High Contrast:</strong> Meets accessibility color requirements</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Animation Framework Documentation -->
+  <div *ngIf="selectedScreen() === 'animations'" class="fade-in">
+    <div class="content-card">
+      <div class="card-header bg-secondary text-white">
+        <h4><span class="icon-large">✨</span> Animation Framework - CSS3 Performance Optimization</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="gradient-text">🎬 Animation System</h5>
+            <div class="highlight-box">
+              <h6>Global Animation Styles</h6>
+              <p><strong>Location:</strong> <code>src/styles.css</code><br>
+              <strong>Approach:</strong> CSS3-based animations for optimal performance<br>
+              <strong>Strategy:</strong> GPU acceleration with transform-based animations</p>
+            </div>
+            
+            <h6>🚀 Available Animation Classes:</h6>
+            <ul class="feature-list">
+              <li><strong>.animate-fade-up:</strong> Entrance from bottom with opacity transition</li>
+              <li><strong>.animate-slide-left:</strong> Horizontal slide entrance from left</li>
+              <li><strong>.animate-slide-right:</strong> Horizontal slide entrance from right</li>
+              <li><strong>.animate-pulse:</strong> Continuous attention-grabbing animation</li>
+              <li><strong>.animate-delay-*:</strong> Staggered timing for sequential animations</li>
+            </ul>
+            
+            <div class="code-section">
+              <pre><code>// Fade Up Animation Implementation
+@keyframes fadeInUp {{ '{' }}
+  from {{ '{' }}
+    opacity: 0;
+    transform: translateY(30px);
+  {{ '}' }}
+  to {{ '{' }}
+    opacity: 1;
+    transform: translateY(0);
+  {{ '}' }}
+{{ '}' }}
+
+.animate-fade-up {{ '{' }}
+  animation: fadeInUp 0.6s ease-out;
+{{ '}' }}</code></pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h5 class="gradient-text">⚡ Performance Optimizations</h5>
+            
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-number">60fps</span>
+                <span class="stat-label">Target Frame Rate</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">GPU</span>
+                <span class="stat-label">Hardware Acceleration</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">CSS3</span>
+                <span class="stat-label">Native Performance</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">0ms</span>
+                <span class="stat-label">JavaScript Overhead</span>
+              </div>
+            </div>
+            
+            <h6>🔧 Optimization Techniques:</h6>
+            <ul class="feature-list">
+              <li><strong>GPU Acceleration:</strong> Transform and opacity properties trigger hardware acceleration</li>
+              <li><strong>Will-change Property:</strong> Browser optimization hints for animated elements</li>
+              <li><strong>Easing Functions:</strong> Natural motion curves using cubic-bezier timing functions</li>
+              <li><strong>Reduced Motion Support:</strong> Respects user's prefers-reduced-motion settings</li>
+              <li><strong>Composite Layers:</strong> Elements promoted to separate layers for smooth rendering</li>
+            </ul>
+            
+            <div class="highlight-box">
+              <h6>🎨 Special Feature: Gradient Title Animation</h6>
+              <ul class="feature-list">
+                <li><strong>Multi-color Gradient:</strong> Dynamic color transitions across the spectrum</li>
+                <li><strong>Smooth Transitions:</strong> Seamless color blending with optimal timing</li>
+                <li><strong>Text Clipping:</strong> Advanced CSS technique for gradient text effects</li>
+                <li><strong>Infinite Loop:</strong> Continuous animation with pause/resume capability</li>
+              </ul>
+            </div>
+            
+            <div class="code-section">
+              <pre><code>// Performance-optimized Animation
+.title-animate {{ '{' }}
+  will-change: background-position;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #fdd835);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+{{ '}' }}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- State Management Documentation -->
+  <div *ngIf="selectedScreen() === 'state-management'" class="fade-in">
+    <div class="content-card">
+      <div class="card-header bg-secondary text-white">
+        <h4><span class="icon-large">🔄</span> State Management - Angular Signals Architecture</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="gradient-text">📡 Signal-Based Reactivity System</h5>
+            <div class="highlight-box">
+              <h6>Main Application Component</h6>
+              <p><strong>File:</strong> <code>src/app/app.ts</code><br>
+              <strong>Pattern:</strong> Centralized state management with Angular Signals<br>
+              <strong>Approach:</strong> Fine-grained reactivity without Zone.js overhead</p>
+            </div>
+            
+            <div class="code-section">
+              <pre><code>// Signal-based State Management
+export class App {{ '{' }}
+  // Reactive state signals
+  protected activeSection = signal('home');
+  protected selectedScreen = signal('home-page');
+  
+  // State mutation methods
+  setActiveSection(section: string) {{ '{' }}
+    this.activeSection.set(section);
+  {{ '}' }}
+  
+  onSectionChange(section: string) {{ '{' }}
+    this.setActiveSection(section);
+  {{ '}' }}
+{{ '}' }}</code></pre>
+            </div>
+            
+            <h6>🔄 Component Communication Flow:</h6>
+            <ul class="feature-list">
+              <li><strong>Parent → Child:</strong> @Input() properties for data passing</li>
+              <li><strong>Child → Parent:</strong> @Output() events for action communication</li>
+              <li><strong>Signal Updates:</strong> Automatic UI synchronization on state changes</li>
+              <li><strong>Change Detection:</strong> Optimized updates only for affected components</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5 class="gradient-text">🏗️ Architecture Benefits</h5>
+            
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-number">⚡</span>
+                <span class="stat-label">Fine-grained Updates</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">🛡️</span>
+                <span class="stat-label">Type Safety</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">🚀</span>
+                <span class="stat-label">Performance</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">🔍</span>
+                <span class="stat-label">Debuggability</span>
+              </div>
+            </div>
+            
+            <h6>💡 Technical Advantages:</h6>
+            <ul class="feature-list">
+              <li><strong>Fine-grained Reactivity:</strong> Only components using specific signals re-render</li>
+              <li><strong>Type Safety:</strong> Full TypeScript integration with compile-time checking</li>
+              <li><strong>Performance:</strong> No Zone.js patching, reduced change detection cycles</li>
+              <li><strong>Predictable State:</strong> Single source of truth with immutable updates</li>
+              <li><strong>Developer Experience:</strong> Clear state flow with excellent debugging support</li>
+            </ul>
+            
+            <div class="code-section">
+              <pre><code>// Template Integration Example
+&lt;div *ngIf="activeSection() === 'home'"&gt;
+  &lt;app-home&gt;&lt;/app-home&gt;
+&lt;/div&gt;
+
+&lt;app-navigation 
+  [activeSection]="activeSection()" 
+  (sectionChange)="onSectionChange($event)"&gt;
+&lt;/app-navigation&gt;</code></pre>
+            </div>
+            
+            <div class="highlight-box">
+              <h6>🎯 Signal Implementation Benefits</h6>
+              <ul class="feature-list">
+                <li><strong>Automatic Subscriptions:</strong> No manual subscription management required</li>
+                <li><strong>Memory Efficiency:</strong> Automatic cleanup prevents memory leaks</li>
+                <li><strong>Synchronous Updates:</strong> Predictable state changes without async complications</li>
+                <li><strong>Tree-shaking Friendly:</strong> Unused signals eliminated in production builds</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Architecture Documentation -->
+  <div *ngIf="selectedScreen() === 'architecture'" class="fade-in">
+    <div class="content-card">
+      <div class="card-header bg-secondary text-white">
+        <h4><span class="icon-large">🏗️</span> Application Architecture - Project Structure & Design Patterns</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="gradient-text">📁 Project Structure</h5>
+            
+            <div class="code-section">
+              <pre><code>// Complete Project Architecture
+Trial1/
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── home/              # OOP Education Hub
+│   │   │   │   ├── home.component.ts
+│   │   │   │   ├── home.component.html
+│   │   │   │   └── home.component.css
+│   │   │   ├── features/          # Technology Showcase
+│   │   │   │   └── features.component.ts
+│   │   │   ├── about/             # Project Information
+│   │   │   │   └── about.component.ts
+│   │   │   ├── contact/           # Professional Links
+│   │   │   │   └── contact.component.ts
+│   │   │   ├── navigation/        # Navigation System
+│   │   │   │   ├── navigation.component.ts
+│   │   │   │   ├── navigation.component.html
+│   │   │   │   └── navigation.component.css
+│   │   │   └── documentation/     # This Component
+│   │   │       ├── documentation.component.ts
+│   │   │       ├── documentation.component.html
+│   │   │       └── documentation.component.css
+│   │   ├── app.ts                 # Main Application Component
+│   │   ├── app.html               # Application Template
+│   │   ├── app.config.ts          # Application Configuration
+│   │   └── app.routes.ts          # Routing Configuration
+│   ├── styles.css                 # Global Styles & Animations
+│   ├── index.html                 # Application Entry Point
+│   └── main.ts                    # Bootstrap Configuration
+├── package.json                   # Dependencies & Scripts
+├── angular.json                   # Angular CLI Configuration
+├── tsconfig.json                  # TypeScript Configuration
+└── README.md                      # Project Documentation</code></pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h5 class="gradient-text">🎯 Design Patterns & Principles</h5>
+            
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-number">SOLID</span>
+                <span class="stat-label">Design Principles</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">DRY</span>
+                <span class="stat-label">Code Philosophy</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">MVC</span>
+                <span class="stat-label">Architecture Pattern</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">IoC</span>
+                <span class="stat-label">Dependency Injection</span>
+              </div>
+            </div>
+            
+            <h6>🔧 Architectural Decisions:</h6>
+            <ul class="feature-list">
+              <li><strong>Standalone Components:</strong> Eliminated NgModule complexity, improved tree-shaking</li>
+              <li><strong>Component-based Architecture:</strong> Separation of concerns, reusability, testability</li>
+              <li><strong>Signal State Management:</strong> Modern reactivity without external libraries</li>
+              <li><strong>Mobile-first Responsive:</strong> Progressive enhancement from mobile to desktop</li>
+              <li><strong>Performance-focused:</strong> Lazy loading, code splitting, optimized bundle sizes</li>
+            </ul>
+            
+            <div class="highlight-box">
+              <h6>🚀 Build & Deployment Configuration</h6>
+              <ul class="feature-list">
+                <li><strong>Angular CLI:</strong> Optimized build pipeline with tree-shaking</li>
+                <li><strong>TypeScript Compilation:</strong> Strict mode with comprehensive type checking</li>
+                <li><strong>CSS Optimization:</strong> PostCSS processing with vendor prefixes</li>
+                <li><strong>Bundle Analysis:</strong> Webpack bundle analyzer for size optimization</li>
+                <li><strong>Production Build:</strong> Minification, uglification, and gzip compression</li>
+              </ul>
+            </div>
+            
+            <div class="architecture-diagram">
+              <strong>Component Dependency Graph</strong>
+              <div class="mt-3">
+                <div class="tech-badge">App Component</div>
+                <div class="tech-badge">↓</div>
+                <div class="tech-badge">Navigation + Page Components</div>
+                <div class="tech-badge">↓</div>
+                <div class="tech-badge">Individual Feature Components</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

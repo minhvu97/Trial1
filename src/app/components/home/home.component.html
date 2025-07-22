@@ -1,0 +1,245 @@
+<div class="row">
+    <div class="col-12">
+        <h1 class="text-center mb-5 title-animate animate-fade-up">Object-Oriented Programming Fundamentals</h1>
+    </div>
+</div>
+
+<!-- The Four Pillars of OOP -->
+<div class="row mb-5">
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 animate-slide-left">
+            <div class="card-header bg-primary text-white">
+                <h4>1. Encapsulation</h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Definition:</strong> Bundling data and methods that operate on that data within a
+                    single unit (class).</p>
+                <p><strong>Key Benefits:</strong></p>
+                <ul>
+                    <li>Data hiding and security</li>
+                    <li>Controlled access through methods</li>
+                    <li>Easier maintenance and debugging</li>
+                </ul>
+                <pre><code>class BankAccount {{ '{' }}
+    private double balance;
+    
+    public void deposit(double amount) {{ '{' }}
+        if (amount > 0) {{ '{' }}
+            balance += amount;
+        {{ '}' }}
+    {{ '}' }}
+    
+    public double getBalance() {{ '{' }}
+        return balance;
+    {{ '}' }}
+{{ '}' }}</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 animate-slide-right">
+            <div class="card-header bg-success text-white">
+                <h4>2. Inheritance</h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Definition:</strong> Creating new classes based on existing classes, inheriting their
+                    properties and methods.</p>
+                <p><strong>Key Benefits:</strong></p>
+                <ul>
+                    <li>Code reusability</li>
+                    <li>Hierarchical classification</li>
+                    <li>Method overriding</li>
+                </ul>
+                <pre><code>class Animal {{ '{' }}
+    protected String name;
+    public void eat() {{ '{' }} /* implementation */ {{ '}' }}
+{{ '}' }}
+
+class Dog extends Animal {{ '{' }}
+    public void bark() {{ '{' }}
+        System.out.println(name + " is barking!");
+    {{ '}' }}
+{{ '}' }}</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 animate-slide-left animate-delay-1">
+            <div class="card-header bg-warning text-white">
+                <h4>3. Polymorphism</h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Definition:</strong> The ability of objects to take multiple forms - same interface,
+                    different implementations.</p>
+                <p><strong>Key Benefits:</strong></p>
+                <ul>
+                    <li>Flexibility in code design</li>
+                    <li>Runtime method resolution</li>
+                    <li>Easier code maintenance</li>
+                </ul>
+                <pre><code>abstract class Shape {{ '{' }}
+    abstract double calculateArea();
+{{ '}' }}
+
+class Circle extends Shape {{ '{' }}
+    double calculateArea() {{ '{' }}
+        return Math.PI * radius * radius;
+    {{ '}' }}
+{{ '}' }}
+
+class Rectangle extends Shape {{ '{' }}
+    double calculateArea() {{ '{' }}
+        return width * height;
+    {{ '}' }}
+{{ '}' }}</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 animate-slide-right animate-delay-1">
+            <div class="card-header bg-danger text-white">
+                <h4>4. Abstraction</h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Definition:</strong> Hiding complex implementation details while showing only
+                    essential features.</p>
+                <p><strong>Key Benefits:</strong></p>
+                <ul>
+                    <li>Simplified interface</li>
+                    <li>Reduced complexity</li>
+                    <li>Implementation independence</li>
+                </ul>
+                <pre><code>interface Vehicle {{ '{' }}
+    void start();
+    void stop();
+    void accelerate();
+{{ '}' }}
+
+class Car implements Vehicle {{ '{' }}
+    public void start() {{ '{' }}
+        // Complex engine starting logic hidden
+        System.out.println("Car started");
+    {{ '}' }}
+{{ '}' }}</code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Design Patterns Section -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="text-center mb-4 animate-fade-up">Key Design Patterns</h2>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card animate-fade-up animate-delay-1">
+            <div class="card-header bg-info text-white">
+                <h5>Singleton Pattern</h5>
+            </div>
+            <div class="card-body">
+                <p>Ensures only one instance of a class exists throughout the application.</p>
+                <small class="text-muted">Used in: Database connections, logging, configuration</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card animate-fade-up animate-delay-2">
+            <div class="card-header bg-info text-white">
+                <h5>Factory Pattern</h5>
+            </div>
+            <div class="card-body">
+                <p>Creates objects without specifying their exact class, promoting loose coupling.</p>
+                <small class="text-muted">Used in: Object creation, dependency injection</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card animate-fade-up animate-delay-3">
+            <div class="card-header bg-info text-white">
+                <h5>Observer Pattern</h5>
+            </div>
+            <div class="card-body">
+                <p>Defines a one-to-many dependency between objects for automatic notifications.</p>
+                <small class="text-muted">Used in: Event handling, MVC architecture</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SOLID Principles -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="text-center mb-4 animate-fade-up">SOLID Principles</h2>
+    </div>
+    <div class="col-12">
+        <div class="card animate-fade-up animate-delay-1">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2 text-center">
+                        <h3 class="text-primary animate-pulse">S</h3>
+                        <strong>Single Responsibility</strong>
+                        <p class="small">A class should have only one reason to change</p>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <h3 class="text-success animate-pulse">O</h3>
+                        <strong>Open/Closed</strong>
+                        <p class="small">Open for extension, closed for modification</p>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <h3 class="text-warning animate-pulse">L</h3>
+                        <strong>Liskov Substitution</strong>
+                        <p class="small">Objects should be replaceable with their subtypes</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <h3 class="text-info animate-pulse">I</h3>
+                        <strong>Interface Segregation</strong>
+                        <p class="small">Many specific interfaces are better than one general</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <h3 class="text-danger animate-pulse">D</h3>
+                        <strong>Dependency Inversion</strong>
+                        <p class="small">Depend on abstractions, not concretions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Real-world Application -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="card bg-light animate-fade-up animate-delay-1">
+            <div class="card-header">
+                <h3>Real-World Application: E-Commerce System</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Class Hierarchy:</h5>
+                        <ul>
+                            <li><strong>Product</strong> (Abstract base class)</li>
+                            <li><strong>Electronics, Clothing, Books</strong> (Inherited classes)</li>
+                            <li><strong>ShoppingCart</strong> (Composition with Product)</li>
+                            <li><strong>PaymentProcessor</strong> (Interface)</li>
+                            <li><strong>CreditCard, PayPal</strong> (Implementations)</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>OOP Benefits Demonstrated:</h5>
+                        <ul>
+                            <li><strong>Encapsulation:</strong> Product price is private, accessed via methods
+                            </li>
+                            <li><strong>Inheritance:</strong> All products inherit common properties</li>
+                            <li><strong>Polymorphism:</strong> Different payment methods, same interface</li>
+                            <li><strong>Abstraction:</strong> Payment processing complexity hidden</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
