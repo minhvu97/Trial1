@@ -1,6 +1,10 @@
 {
   "name": "oop-showcase",
   "version": "0.0.0",
+  "engines": {
+    "node": ">=22.17.1",
+    "npm": ">=10.0.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

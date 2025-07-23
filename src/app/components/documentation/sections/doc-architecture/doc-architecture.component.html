@@ -1,0 +1,65 @@
+<div class="content-card">
+  <div class="card-header bg-secondary text-white">
+    <h4><span class="icon-large">🏗️</span> Modular Architecture - Component Composition Pattern</h4>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <h5 class="gradient-text">🔄 Refactoring Journey</h5>
+        <p><strong>Evolution:</strong> The application evolved from a monolithic home component (~800 lines) to a modular architecture with specialized child components.</p>
+        
+        <h6>📊 Before vs After:</h6>
+        <div class="comparison-table">
+          <div class="comparison-row">
+            <span class="metric">Lines of Code:</span>
+            <span class="before">~800 lines</span>
+            <span class="after">~100 lines (main) + 4 focused components</span>
+          </div>
+          <div class="comparison-row">
+            <span class="metric">Maintainability:</span>
+            <span class="before">Difficult</span>
+            <span class="after">Easy - Single Responsibility</span>
+          </div>
+          <div class="comparison-row">
+            <span class="metric">Testing:</span>
+            <span class="before">Complex integration tests</span>
+            <span class="after">Simple unit tests per component</span>
+          </div>
+          <div class="comparison-row">
+            <span class="metric">Reusability:</span>
+            <span class="before">Monolithic - no reuse</span>
+            <span class="after">Components can be reused independently</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h5 class="gradient-text">🏗️ Architecture Benefits</h5>
+        <ul class="feature-list">
+          <li><strong>Separation of Concerns:</strong> Each component has one clear purpose</li>
+          <li><strong>Lazy Loading Ready:</strong> Components can be loaded on-demand</li>
+          <li><strong>Team Collaboration:</strong> Multiple developers can work on different components</li>
+          <li><strong>Easy Maintenance:</strong> Bug fixes and updates are isolated to specific components</li>
+          <li><strong>Performance:</strong> Smaller bundle sizes and better tree-shaking</li>
+        </ul>
+        
+        <div class="code-section">
+          <pre><code>// Component Composition Pattern
+@Component({{ '{' }}
+  selector: 'app-home',
+  template: `
+    &lt;div class="container"&gt;
+      &lt;h1&gt;OOP Fundamentals&lt;/h1&gt;
+      &lt;app-oop-pillars&gt;&lt;/app-oop-pillars&gt;
+      &lt;app-design-patterns&gt;&lt;/app-design-patterns&gt;
+      &lt;app-solid-principles&gt;&lt;/app-solid-principles&gt;
+      &lt;app-real-world-example&gt;&lt;/app-real-world-example&gt;
+    &lt;/div&gt;
+  `,
+  imports: [/* child components */]
+{{ '}' }})
+export class HomeComponent {{ '{' }} {{ '}' }}</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

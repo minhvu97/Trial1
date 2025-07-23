@@ -1,0 +1,124 @@
+<!-- The Four Pillars of OOP -->
+<div class="row mb-5">
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 animate-slide-left">
+            <div class="card-header bg-primary text-white">
+                <h4>1. Encapsulation</h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Definition:</strong> Bundling data and methods that operate on that data within a
+                    single unit (class).</p>
+                <p><strong>Key Benefits:</strong></p>
+                <ul>
+                    <li>Data hiding and security</li>
+                    <li>Controlled access through methods</li>
+                    <li>Easier maintenance and debugging</li>
+                </ul>
+                <pre><code>class BankAccount {{ '{' }}
+    private double balance;
+    
+    public void deposit(double amount) {{ '{' }}
+        if (amount > 0) {{ '{' }}
+            balance += amount;
+        {{ '}' }}
+    {{ '}' }}
+    
+    public double getBalance() {{ '{' }}
+        return balance;
+    {{ '}' }}
+{{ '}' }}</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 animate-slide-right">
+            <div class="card-header bg-success text-white">
+                <h4>2. Inheritance</h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Definition:</strong> Creating new classes based on existing classes, inheriting their
+                    properties and methods.</p>
+                <p><strong>Key Benefits:</strong></p>
+                <ul>
+                    <li>Code reusability</li>
+                    <li>Hierarchical classification</li>
+                    <li>Method overriding</li>
+                </ul>
+                <pre><code>class Animal {{ '{' }}
+    protected String name;
+    public void eat() {{ '{' }} /* implementation */ {{ '}' }}
+{{ '}' }}
+
+class Dog extends Animal {{ '{' }}
+    public void bark() {{ '{' }}
+        System.out.println(name + " is barking!");
+    {{ '}' }}
+{{ '}' }}</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 animate-slide-left animate-delay-1">
+            <div class="card-header bg-warning text-white">
+                <h4>3. Polymorphism</h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Definition:</strong> The ability of objects to take multiple forms - same interface,
+                    different implementations.</p>
+                <p><strong>Key Benefits:</strong></p>
+                <ul>
+                    <li>Flexibility in code design</li>
+                    <li>Runtime method resolution</li>
+                    <li>Easier code maintenance</li>
+                </ul>
+                <pre><code>abstract class Shape {{ '{' }}
+    abstract double calculateArea();
+{{ '}' }}
+
+class Circle extends Shape {{ '{' }}
+    double calculateArea() {{ '{' }}
+        return Math.PI * radius * radius;
+    {{ '}' }}
+{{ '}' }}
+
+class Rectangle extends Shape {{ '{' }}
+    double calculateArea() {{ '{' }}
+        return width * height;
+    {{ '}' }}
+{{ '}' }}</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 animate-slide-right animate-delay-1">
+            <div class="card-header bg-danger text-white">
+                <h4>4. Abstraction</h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Definition:</strong> Hiding complex implementation details while showing only
+                    essential features.</p>
+                <p><strong>Key Benefits:</strong></p>
+                <ul>
+                    <li>Simplified interface</li>
+                    <li>Reduced complexity</li>
+                    <li>Implementation independence</li>
+                </ul>
+                <pre><code>interface Vehicle {{ '{' }}
+    void start();
+    void stop();
+    void accelerate();
+{{ '}' }}
+
+class Car implements Vehicle {{ '{' }}
+    public void start() {{ '{' }}
+        // Complex engine starting logic hidden
+        System.out.println("Car started");
+    {{ '}' }}
+{{ '}' }}</code></pre>
+            </div>
+        </div>
+    </div>
+</div>

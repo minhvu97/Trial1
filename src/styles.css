@@ -100,9 +100,113 @@ pre:hover {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: gradientShift 3s ease-in-out infinite;
+    line-height: 1.4;
+    padding-bottom: 8px;
+    overflow: visible;
+}
+
+/* Ensure proper text rendering for animated titles */
+h1.title-animate, h2.title-animate, h3.title-animate {
+    line-height: 1.4 !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 1.5rem !important;
+    display: block !important;
 }
 
 @keyframes gradientShift {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
+}
+
+/* SOLID Principles Hover Tooltips */
+.solid-letter {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.solid-letter:hover {
+    transform: scale(1.1);
+}
+
+.solid-tooltip {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+    width: 320px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+    text-align: left;
+}
+
+.solid-letter:hover .solid-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.solid-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: #333;
+}
+
+/* Toggle Button Styling */
+.code-toggle-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 8px 0;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.code-toggle-btn:hover {
+    background: #0056b3;
+}
+
+/* Code Example States */
+.code-example {
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.code-example.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+.code-example.expanded {
+    max-height: 400px;
+    opacity: 1;
+}
+
+.solid-tooltip pre {
+    background: #444;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin: 8px 0 0 0;
+}
+
+.solid-tooltip pre:hover {
+    background: #444;
 }

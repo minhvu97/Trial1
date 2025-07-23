@@ -5,7 +5,7 @@
     <p class="lead">Comprehensive technical documentation for the OOP Showcase Application</p>
     <div class="stats-grid mt-4">
       <div class="stat-item">
-        <span class="stat-number">6</span>
+        <span class="stat-number">10</span>
         <span class="stat-label">Components</span>
       </div>
       <div class="stat-item">
@@ -41,7 +41,35 @@
                 [class.btn-primary]="selectedScreen() === 'home-page'"
                 [class.btn-outline-primary]="selectedScreen() !== 'home-page'"
                 (click)="setSelectedScreen('home-page')">
-          <span class="icon-large">🏠</span> Home Component - OOP Educational Hub
+          <span class="icon-large">🏠</span> Home Component - Modular OOP Hub
+        </button>
+        <button type="button" 
+                class="btn btn-selector"
+                [class.btn-info]="selectedScreen() === 'oop-pillars'"
+                [class.btn-outline-info]="selectedScreen() !== 'oop-pillars'"
+                (click)="setSelectedScreen('oop-pillars')">
+          <span class="icon-large">🏛️</span> OOP Pillars Component
+        </button>
+        <button type="button" 
+                class="btn btn-selector"
+                [class.btn-secondary]="selectedScreen() === 'design-patterns'"
+                [class.btn-outline-secondary]="selectedScreen() !== 'design-patterns'"
+                (click)="setSelectedScreen('design-patterns')">
+          <span class="icon-large">🔧</span> Design Patterns Component
+        </button>
+        <button type="button" 
+                class="btn btn-selector"
+                [class.btn-warning]="selectedScreen() === 'solid-principles'"
+                [class.btn-outline-warning]="selectedScreen() !== 'solid-principles'"
+                (click)="setSelectedScreen('solid-principles')">
+          <span class="icon-large">🎯</span> SOLID Principles Component
+        </button>
+        <button type="button" 
+                class="btn btn-selector"
+                [class.btn-success]="selectedScreen() === 'real-world-example'"
+                [class.btn-outline-success]="selectedScreen() !== 'real-world-example'"
+                (click)="setSelectedScreen('real-world-example')">
+          <span class="icon-large">🌍</span> Real World Example Component
         </button>
         <button type="button" 
                 class="btn btn-selector"
@@ -75,7 +103,14 @@
                 [class.btn-secondary]="selectedScreen() === 'navigation'"
                 [class.btn-outline-secondary]="selectedScreen() !== 'navigation'"
                 (click)="setSelectedScreen('navigation')">
-          <span class="icon-large">🧭</span> Navigation System - Component Communication
+          <span class="icon-large">🧭</span> Navigation System - Signal-based Communication
+        </button>
+        <button type="button" 
+                class="btn btn-selector"
+                [class.btn-secondary]="selectedScreen() === 'interactive-features'"
+                [class.btn-outline-secondary]="selectedScreen() !== 'interactive-features'"
+                (click)="setSelectedScreen('interactive-features')">
+          <span class="icon-large">🎮</span> Interactive Features - Hover Tooltips & Collapsible Code
         </button>
         <button type="button" 
                 class="btn btn-selector"
@@ -96,7 +131,7 @@
                 [class.btn-secondary]="selectedScreen() === 'architecture'"
                 [class.btn-outline-secondary]="selectedScreen() !== 'architecture'"
                 (click)="setSelectedScreen('architecture')">
-          <span class="icon-large">🏗️</span> Application Architecture - Project Structure
+          <span class="icon-large">🏗️</span> Modular Architecture - Component Composition
         </button>
       </div>
     </div>
@@ -108,59 +143,279 @@
   
   <!-- Home Component Documentation -->
   <div *ngIf="selectedScreen() === 'home-page'" class="fade-in">
+    <app-doc-home-page></app-doc-home-page>
+  </div>
+
+  <!-- OOP Pillars Component Documentation -->
+  <div *ngIf="selectedScreen() === 'oop-pillars'" class="fade-in">
+    <app-doc-oop-pillars></app-doc-oop-pillars>
+  </div>
+
+  <!-- Design Patterns Component Documentation -->
+  <div *ngIf="selectedScreen() === 'design-patterns'" class="fade-in">
     <div class="content-card">
-      <div class="card-header bg-primary text-white">
-        <h4><span class="icon-large">🏠</span> Home Component - Educational Content Hub</h4>
+      <div class="card-header bg-secondary text-white">
+        <h4><span class="icon-large">🔧</span> Design Patterns Component - Common Solutions</h4>
       </div>
       <div class="card-body">
         <div class="row">
           <div class="col-md-6">
-            <h5 class="gradient-text">📋 Component Overview</h5>
+            <h5 class="gradient-text">📋 Component Details</h5>
             <div class="highlight-box">
               <h6>File Location</h6>
-              <code>src/app/components/home/home.component.ts</code>
+              <code>src/app/components/home/design-patterns/design-patterns.component.ts</code>
             </div>
-            <p><strong>Primary Purpose:</strong> Serves as the main educational hub for Object-Oriented Programming concepts, presenting four fundamental pillars, design patterns, and SOLID principles in an interactive, visually appealing format.</p>
+            <p><strong>Purpose:</strong> Showcases three essential design patterns that solve common programming problems with elegant, reusable solutions.</p>
             
-            <h6>📚 Educational Content Sections:</h6>
+            <h6>🔧 Featured Patterns:</h6>
             <ul class="feature-list">
-              <li><strong>Four OOP Pillars:</strong> Comprehensive coverage of Encapsulation, Inheritance, Polymorphism, and Abstraction with practical Java examples</li>
-              <li><strong>Design Patterns:</strong> Interactive exploration of Singleton, Factory, and Observer patterns with real-world applications</li>
-              <li><strong>SOLID Principles:</strong> Detailed breakdown of software design principles with practical implementation guidance</li>
-              <li><strong>Real-world Case Study:</strong> E-commerce system example demonstrating OOP concepts in action</li>
+              <li><strong>Singleton Pattern:</strong> Ensures single instance across application lifecycle</li>
+              <li><strong>Factory Pattern:</strong> Creates objects without specifying exact classes</li>
+              <li><strong>Observer Pattern:</strong> Defines one-to-many dependency relationships</li>
             </ul>
           </div>
           <div class="col-md-6">
-            <h5 class="gradient-text">🎨 Technical Implementation</h5>
-            
-            <div class="architecture-diagram">
-              <strong>Component Architecture</strong>
-              <div class="mt-3">
-                <div class="tech-badge">Standalone Component</div>
-                <div class="tech-badge">Bootstrap 5 Grid</div>
-                <div class="tech-badge">CSS3 Animations</div>
-                <div class="tech-badge">Responsive Design</div>
-              </div>
-            </div>
-            
-            <h6>🔧 Key Features:</h6>
+            <h5 class="gradient-text">🎨 Implementation</h5>
             <ul class="feature-list">
-              <li><strong>Responsive Grid System:</strong> Utilizes Bootstrap's col-md-6 classes for optimal mobile and desktop layouts</li>
-              <li><strong>Equal Height Cards:</strong> Implements .h-100 class ensuring uniform card heights across different content lengths</li>
-              <li><strong>Color-coded Themes:</strong> Each OOP pillar uses distinct color schemes for enhanced visual learning</li>
-              <li><strong>Staggered Animations:</strong> CSS animation delays create smooth, sequential content reveals</li>
-              <li><strong>Syntax Highlighting:</strong> Pre-formatted Java code blocks with proper indentation and highlighting</li>
+              <li><strong>Card-based Layout:</strong> Clean, organized presentation of each pattern</li>
+              <li><strong>Use Case Examples:</strong> Real-world applications for each pattern</li>
+              <li><strong>Progressive Reveal:</strong> Staggered animation timing for visual flow</li>
+              <li><strong>Info Color Theme:</strong> Consistent bg-info styling for technical content</li>
             </ul>
             
             <div class="code-section">
-              <pre><code>// Example: Encapsulation Implementation
-export class HomeComponent {{ '{' }}
-  // Demonstrates component encapsulation
-  private educationalContent = {{ '{' }}
-    pillars: ['Encapsulation', 'Inheritance', 'Polymorphism', 'Abstraction'],
-    patterns: ['Singleton', 'Factory', 'Observer']
+              <pre><code>// Simple, focused component structure
+@Component({{ '{' }}
+  selector: 'app-design-patterns',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './design-patterns.component.html'
+{{ '}' }})
+export class DesignPatternsComponent {{ '{' }} {{ '}' }}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOLID Principles Component Documentation -->
+  <div *ngIf="selectedScreen() === 'solid-principles'" class="fade-in">
+    <div class="content-card">
+      <div class="card-header bg-warning text-white">
+        <h4><span class="icon-large">🎯</span> SOLID Principles Component - Interactive Learning</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="gradient-text">📋 Component Details</h5>
+            <div class="highlight-box">
+              <h6>File Location</h6>
+              <code>src/app/components/home/solid-principles/solid-principles.component.ts</code>
+            </div>
+            <p><strong>Purpose:</strong> Most complex child component featuring interactive tooltips, collapsible code examples, and state management for the five SOLID principles.</p>
+            
+            <h6>🎯 SOLID Principles:</h6>
+            <ul class="feature-list">
+              <li><strong>S - Single Responsibility:</strong> Chef analogy with simple Employee/Chef comparison</li>
+              <li><strong>O - Open/Closed:</strong> Phone case example with accessory extension</li>
+              <li><strong>L - Liskov Substitution:</strong> Bird/Penguin example with consistent behavior</li>
+              <li><strong>I - Interface Segregation:</strong> TV remote vs airplane controls analogy</li>
+              <li><strong>D - Dependency Inversion:</strong> Light switch with interchangeable bulbs</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5 class="gradient-text">🎮 Interactive Features</h5>
+            <ul class="feature-list">
+              <li><strong>Hover Tooltips:</strong> Real-world analogies appear on letter hover</li>
+              <li><strong>Collapsible Code:</strong> Toggle buttons show/hide code examples</li>
+              <li><strong>State Management:</strong> codeStates object tracks expansion state</li>
+              <li><strong>Color-coded Letters:</strong> Each principle has unique color theme</li>
+              <li><strong>Simplified Examples:</strong> Concise, relevant code matching analogies</li>
+            </ul>
+            
+            <div class="code-section">
+              <pre><code>export class SolidPrinciplesComponent {{ '{' }}
+  // State management for interactive features
+  codeStates = {{ '{' }}
+    s: false, o: false, l: false, i: false, d: false
   {{ '}' }};
+
+  toggleCode(principle: string) {{ '{' }}
+    this.codeStates[principle as keyof typeof this.codeStates] = 
+      !this.codeStates[principle as keyof typeof this.codeStates];
+  {{ '}' }}
 {{ '}' }}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Real World Example Component Documentation -->
+  <div *ngIf="selectedScreen() === 'real-world-example'" class="fade-in">
+    <div class="content-card">
+      <div class="card-header bg-success text-white">
+        <h4><span class="icon-large">🌍</span> Real World Example Component - E-Commerce System</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="gradient-text">📋 Component Details</h5>
+            <div class="highlight-box">
+              <h6>File Location</h6>
+              <code>src/app/components/home/real-world-example/real-world-example.component.ts</code>
+            </div>
+            <p><strong>Purpose:</strong> Demonstrates practical application of OOP concepts through a comprehensive e-commerce system example, bridging theory with real-world implementation.</p>
+            
+            <h6>🏗️ System Architecture:</h6>
+            <ul class="feature-list">
+              <li><strong>Abstract Product Class:</strong> Base class with common properties and abstract methods</li>
+              <li><strong>Concrete Implementations:</strong> Electronics, Clothing, Books with specific behaviors</li>
+              <li><strong>Composition Pattern:</strong> ShoppingCart contains Product instances</li>
+              <li><strong>Interface Implementation:</strong> PaymentProcessor with multiple payment methods</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5 class="gradient-text">💡 OOP Principles Demonstration</h5>
+            <ul class="feature-list">
+              <li><strong>Encapsulation:</strong> Private price field with getter/setter validation</li>
+              <li><strong>Inheritance:</strong> Product hierarchy with specialized tax calculations</li>
+              <li><strong>Polymorphism:</strong> Different payment processors with same interface</li>
+              <li><strong>Abstraction:</strong> Complex payment logic hidden behind simple methods</li>
+            </ul>
+            
+            <div class="code-section">
+              <pre><code>// Rich data model with interfaces
+export interface ClassItem {{ '{' }}
+  name: string;
+  type: string; 
+  code: string;
+{{ '}' }}
+
+export interface RealWorldExample {{ '{' }}
+  title: string;
+  classHierarchy: ClassItem[];
+  oopBenefits: OOPBenefit[];
+{{ '}' }}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Features Documentation -->
+  <div *ngIf="selectedScreen() === 'interactive-features'" class="fade-in">
+    <div class="content-card">
+      <div class="card-header bg-secondary text-white">
+        <h4><span class="icon-large">🎮</span> Interactive Features - Enhanced User Experience</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="gradient-text">🎯 SOLID Principles Interactivity</h5>
+            <p><strong>Implementation:</strong> Advanced interactive features implemented specifically in the SOLID Principles component to enhance educational engagement.</p>
+            
+            <h6>🔧 Interactive Elements:</h6>
+            <ul class="feature-list">
+              <li><strong>Hover Tooltips:</strong> CSS-powered tooltips appear on letter hover with real-world analogies</li>
+              <li><strong>Collapsible Code Examples:</strong> Click-to-expand functionality with smooth animations</li>
+              <li><strong>State Persistence:</strong> Component remembers which code examples are expanded</li>
+              <li><strong>Visual Feedback:</strong> Button text changes based on expand/collapse state</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5 class="gradient-text">⚡ Technical Implementation</h5>
+            <ul class="feature-list">
+              <li><strong>CSS Transforms:</strong> Smooth height transitions for collapsible content</li>
+              <li><strong>Angular Event Binding:</strong> (click) handlers for toggle functionality</li>
+              <li><strong>Conditional Classes:</strong> Dynamic CSS classes based on component state</li>
+              <li><strong>Template Expressions:</strong> Reactive button text using ternary operators</li>
+            </ul>
+            
+            <div class="code-section">
+              <pre><code>// CSS Animation Implementation
+.code-example {{ '{' }}
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+{{ '}' }}
+
+.code-example.expanded {{ '{' }}
+  max-height: 500px;
+  transition: max-height 0.3s ease-in;
+{{ '}' }}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modular Architecture Documentation -->
+  <div *ngIf="selectedScreen() === 'architecture'" class="fade-in">
+    <div class="content-card">
+      <div class="card-header bg-secondary text-white">
+        <h4><span class="icon-large">🏗️</span> Modular Architecture - Component Composition Pattern</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="gradient-text">🔄 Refactoring Journey</h5>
+            <p><strong>Evolution:</strong> The application evolved from a monolithic home component (~800 lines) to a modular architecture with specialized child components.</p>
+            
+            <h6>📊 Before vs After:</h6>
+            <div class="comparison-table">
+              <div class="comparison-row">
+                <span class="metric">Lines of Code:</span>
+                <span class="before">~800 lines</span>
+                <span class="after">~100 lines (main) + 4 focused components</span>
+              </div>
+              <div class="comparison-row">
+                <span class="metric">Maintainability:</span>
+                <span class="before">Difficult</span>
+                <span class="after">Easy - Single Responsibility</span>
+              </div>
+              <div class="comparison-row">
+                <span class="metric">Testing:</span>
+                <span class="before">Complex integration tests</span>
+                <span class="after">Simple unit tests per component</span>
+              </div>
+              <div class="comparison-row">
+                <span class="metric">Reusability:</span>
+                <span class="before">Monolithic - no reuse</span>
+                <span class="after">Components can be reused independently</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h5 class="gradient-text">🏗️ Architecture Benefits</h5>
+            <ul class="feature-list">
+              <li><strong>Separation of Concerns:</strong> Each component has one clear purpose</li>
+              <li><strong>Lazy Loading Ready:</strong> Components can be loaded on-demand</li>
+              <li><strong>Team Collaboration:</strong> Multiple developers can work on different components</li>
+              <li><strong>Easy Maintenance:</strong> Bug fixes and updates are isolated to specific components</li>
+              <li><strong>Performance:</strong> Smaller bundle sizes and better tree-shaking</li>
+            </ul>
+            
+            <div class="code-section">
+              <pre><code>// Component Composition Pattern
+@Component({{ '{' }}
+  selector: 'app-home',
+  template: `
+    &lt;div class="container"&gt;
+      &lt;h1&gt;OOP Fundamentals&lt;/h1&gt;
+      &lt;app-oop-pillars&gt;&lt;/app-oop-pillars&gt;
+      &lt;app-design-patterns&gt;&lt;/app-design-patterns&gt;
+      &lt;app-solid-principles&gt;&lt;/app-solid-principles&gt;
+      &lt;app-real-world-example&gt;&lt;/app-real-world-example&gt;
+    &lt;/div&gt;
+  `,
+  imports: [/* child components */]
+{{ '}' }})
+export class HomeComponent {{ '{' }} {{ '}' }}</code></pre>
             </div>
           </div>
         </div>
@@ -430,56 +685,83 @@ src/
   <div *ngIf="selectedScreen() === 'navigation'" class="fade-in">
     <div class="content-card">
       <div class="card-header bg-secondary text-white">
-        <h4><span class="icon-large">🧭</span> Navigation System - Component Communication Architecture</h4>
+        <h4><span class="icon-large">🧭</span> Navigation System - Signal-based Communication</h4>
       </div>
       <div class="card-body">
         <div class="row">
           <div class="col-md-6">
-            <h5 class="gradient-text">🔄 Component Communication Pattern</h5>
+            <h5 class="gradient-text">🔄 Signal-based Architecture</h5>
             <div class="highlight-box">
               <h6>Navigation Component</h6>
               <p><strong>File:</strong> <code>src/app/components/navigation/navigation.component.ts</code><br>
-              <strong>Role:</strong> Central navigation hub with parent-child communication<br>
-              <strong>Pattern:</strong> @Input/@Output decorator pattern for data flow</p>
+              <strong>Pattern:</strong> Angular Signals for reactive state management<br>
+              <strong>Benefit:</strong> Simplified state management without complex @Input/@Output chains</p>
             </div>
             
             <div class="code-section">
-              <pre><code>// Component Communication Pattern
+              <pre><code>// Signal-based Navigation Pattern
+import {{ '{' }} signal {{ '}' }} from '@angular/core';
+
 export class NavigationComponent {{ '{' }}
-  @Input() activeSection: string = 'home';
-  @Output() sectionChange = new EventEmitter&lt;string&gt;();
+  activeSection = signal('home');
+
+  setActiveSection(section: string) {{ '{' }}
+    this.activeSection.set(section);
+  {{ '}' }}
 
   onNavClick(event: Event, section: string) {{ '{' }}
     event.preventDefault();
-    this.sectionChange.emit(section);
+    this.setActiveSection(section);
   {{ '}' }}
 {{ '}' }}</code></pre>
             </div>
             
-            <h6>📱 Responsive Navigation Features:</h6>
+            <h6>📱 Modern Navigation Features:</h6>
             <ul class="feature-list">
+              <li><strong>Signal Reactivity:</strong> Automatic UI updates when activeSection changes</li>
               <li><strong>Bootstrap Navbar:</strong> Mobile-friendly hamburger menu with collapse functionality</li>
-              <li><strong>Breakpoint Control:</strong> .navbar-expand-md for tablet and desktop expansion</li>
-              <li><strong>Active State Management:</strong> Dynamic [class.active] binding based on current section</li>
-              <li><strong>Event Handling:</strong> Proper preventDefault() to avoid page refreshes</li>
+              <li><strong>Simplified State:</strong> No complex parent-child communication patterns needed</li>
+              <li><strong>Type Safety:</strong> Full TypeScript support with signal typing</li>
+              <li><strong>Performance:</strong> Optimized change detection with signals</li>
             </ul>
           </div>
           <div class="col-md-6">
             <h5 class="gradient-text">🎨 User Interface Design</h5>
             
             <div class="architecture-diagram">
-              <strong>Navigation Flow</strong>
+              <strong>Signal-based Flow</strong>
               <div class="mt-3">
                 <div class="tech-badge">User Click</div>
-                <div class="tech-badge">Event Emission</div>
-                <div class="tech-badge">State Update</div>
-                <div class="tech-badge">UI Refresh</div>
+                <div class="tech-badge">Signal Update</div>
+                <div class="tech-badge">Reactive UI</div>
+                <div class="tech-badge">Instant Feedback</div>
               </div>
             </div>
             
             <h6>⚡ Design Features:</h6>
             <ul class="feature-list">
               <li><strong>Brand Identity:</strong> "OOP Showcase" logo with consistent branding</li>
+              <li><strong>Signal Binding:</strong> Template expressions like activeSection() === 'home'</li>
+              <li><strong>Reactive Classes:</strong> Dynamic CSS classes based on signal values</li>
+              <li><strong>Clean Templates:</strong> No complex event binding or prop drilling</li>
+              <li><strong>Modern Angular:</strong> Leverages Angular 20's latest signal features</li>
+            </ul>
+            
+            <div class="code-section">
+              <pre><code>// Template with Signal Binding
+&lt;nav class="navbar navbar-expand-md"&gt;
+  &lt;a class="nav-link" 
+     [class.active]="activeSection() === 'home'"
+     (click)="onNavClick($event, 'home')"&gt;
+    Home
+  &lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
               <li><strong>Dark Theme:</strong> Professional appearance with high contrast</li>
               <li><strong>Right-aligned Menu:</strong> Modern layout following current design trends</li>
               <li><strong>Smooth Transitions:</strong> CSS transitions for enhanced user experience</li>
